@@ -27,6 +27,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+//세팅 시험용
+import { Fonts } from '@styles/font'
+
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -74,24 +77,22 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+        <View>
+          <Text style={Fonts.title1}>
+            테스트
+          </Text>
+          <Text style={Fonts.title2}>
+            테스트
+          </Text>
+          <Text style={Fonts.body1}>
+            테스트
+          </Text>
+          <Text style={Fonts.body2}>
+            테스트
+          </Text>
+          <Text style={Fonts.body3}>
+            테스트
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
