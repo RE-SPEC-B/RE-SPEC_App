@@ -28,7 +28,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 //세팅 시험용
-import { Fonts } from '@styles/font';
+import {Fonts} from '@styles/font';
 import SvgIcon from '@components/svg/SvgIcon';
 import Svg from 'react-native-svg';
 
@@ -75,36 +75,26 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <SvgIcon name={"add"}/>
-      <SvgIcon name={"communityOff"}/>
-      <SvgIcon name={"homeOff"}/>
-      <SvgIcon name={"homeOn"}/>
-      <SvgIcon name={"pen"}/>
+      <SvgIcon name={'add'} />
+      <SvgIcon name={'communityOff'} />
+      <SvgIcon name={'homeOff'} />
+      <SvgIcon name={'homeOn'} />
+      <SvgIcon name={'pen'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
         <View>
-          <Text style={Fonts.title1}>
-            테스트
-          </Text>
-          <Text style={Fonts.title2}>
-            테스트
-          </Text>
-          <Text style={Fonts.body1}>
-            테스트
-          </Text>
-          <Text style={Fonts.body2}>
-            테스트
-          </Text>
-          <Text style={Fonts.body3}>
-            테스트
-          </Text>
-          <SvgIcon name={"add"}/>
-          <SvgIcon name={"communityOff"}/>
-          <SvgIcon name={"homeOff"}/>
-          <SvgIcon name={"homeOn"}/>
-          <SvgIcon name={"pen"}/>
+          <Text style={Fonts.title1}>테스트</Text>
+          <Text style={Fonts.title2}>테스트</Text>
+          <Text style={Fonts.body1}>테스트</Text>
+          <Text style={Fonts.body2}>테스트</Text>
+          <Text style={Fonts.body3}>테스트</Text>
+          <SvgIcon name={'add'} />
+          <SvgIcon name={'communityOff'} />
+          <SvgIcon name={'homeOff'} />
+          <SvgIcon name={'homeOn'} />
+          <SvgIcon name={'pen'} />
         </View>
       </ScrollView>
     </SafeAreaView>
