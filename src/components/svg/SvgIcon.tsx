@@ -1,33 +1,15 @@
 import React from 'react';
-import { SvgProps } from 'react-native-svg';
 import * as Icons from '@assets/svg/assets';
 
-type SvgIconProps = SvgProps & {
+type SvgIconProps = {
   name: keyof typeof Icons
-  size?: number
 }
 function SvgIcon({
-  name,
-  fill = 'black',
-  width: _width,
-  height: _height,
-  size,
-  ...props
+  name
 }: SvgIconProps) {
-  const Comp = Icons[name];
-  const width = _width ?? size;
-  const height = _height ?? size;
-  const sizeProps = {
-    ...(width !== undefined ? { width } : {}),
-    ...(height !== undefined ? { height } : {}),
-  }
-
+  const Svg = Icons[name];
   return (
-    <Comp
-      {...props}
-      fill={fill}
-      {...sizeProps}
-    />
+    <Svg/>
   )
 }
 
