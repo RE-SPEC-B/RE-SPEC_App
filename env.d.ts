@@ -1,3 +1,4 @@
-declare module '@env' {
-  export const LOAD_STORYBOOK: string;
+declare module "@env" {
+  export const LOAD_STORYBOOK: "true" | "false";
+  export const TEST: string;
 }

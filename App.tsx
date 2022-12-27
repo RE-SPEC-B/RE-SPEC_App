@@ -1,35 +1,35 @@
-import React from 'react';
-import {SafeAreaView, ScrollView, Text, View} from 'react-native';
+import React from "react";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
 //세팅 시험용
-import {Fonts} from '@styles/font';
-import SvgIcon from '@components/svg/SvgIcon';
-import ErrorBoundary from '@components/errorBoundary/ErrorBoundary';
-import {LOAD_STORYBOOK} from '@env';
+import { Fonts } from "@styles/font";
+import SvgIcon from "@components/svg/SvgIcon";
+import ErrorBoundary from "@components/errorBoundary/ErrorBoundary";
+// import { LOAD_STORYBOOK } from "@env";
+
+const LOAD_STORYBOOK = true;
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <ErrorBoundary fallback={<View />}>
+    <ErrorBoundary fallback={<View></View>}>
+      <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <View>
-            {LOAD_STORYBOOK === 'true' ? <Text>True</Text> : <Text>False</Text>}
             <Text style={Fonts.title1}>테스트</Text>
             <Text style={Fonts.title2}>테스트</Text>
             <Text style={Fonts.body1}>테스트</Text>
             <Text style={Fonts.body2}>테스트</Text>
             <Text style={Fonts.body3}>테스트</Text>
-            <SvgIcon name={'add'} />
-            <SvgIcon name={'communityOff'} />
-            <SvgIcon name={'homeOff'} />
-            <SvgIcon name={'homeOn'} />
-            <SvgIcon name={'pen'} />
+            <SvgIcon name={"add"} />
+            <SvgIcon name={"communityOff"} />
+            <SvgIcon name={"homeOff"} />
+            <SvgIcon name={"homeOn"} />
+            <SvgIcon name={"pen"} />
           </View>
         </ScrollView>
-      </ErrorBoundary>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ErrorBoundary>
   );
 };
 
-export default App;
-// export {default} from './storybook';
+export default LOAD_STORYBOOK ? require("./storybook").default : App;

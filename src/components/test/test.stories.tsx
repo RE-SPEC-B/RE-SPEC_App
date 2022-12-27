@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/react-native";
-import Test from "./test";
+import Test from "./Test";
 
 storiesOf("Test", module)
   .add("Svg", () => <Test text="test" isSvg={true} />)
