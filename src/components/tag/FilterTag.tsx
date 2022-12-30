@@ -1,4 +1,4 @@
-import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
+import { EBrandColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
