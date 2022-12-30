@@ -1,13 +1,7 @@
 import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
-import {
-  View,
-  Button as RNButton,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-} from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 interface IButton {
   title: string;
