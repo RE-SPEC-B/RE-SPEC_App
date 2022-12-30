@@ -19,30 +19,25 @@ const Button = ({ title, disabled }: IButton) => {
   const disabledTitle = disabled ? styles.disabledTitleColor : {};
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={{ ...styles.button, ...disabledButton }}
-        disabled={disabled}
+    <TouchableOpacity
+      style={{ ...styles.button, ...disabledButton }}
+      disabled={disabled}
+    >
+      <Text
+        style={{
+          ...styles.title,
+          ...disabledTitle,
+        }}
       >
-        <Text
-          style={{
-            ...styles.title,
-            ...disabledTitle,
-          }}
-        >
-          {title}
-        </Text>
-      </TouchableOpacity>
-    </View>
+        {title}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
 export default Button;
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 10,
-  },
   button: {
     paddingVertical: 21,
     paddingHorizontal: 16,

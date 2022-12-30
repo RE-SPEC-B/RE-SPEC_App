@@ -9,10 +9,8 @@ interface IFilterTag {
 
 const FilterTag = ({ title }: IFilterTag) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.tag}>
-        <Text style={styles.title}>{title}</Text>
-      </View>
+    <View style={styles.tag}>
+      <Text style={styles.title}>{title}</Text>
     </View>
   );
 };
@@ -20,9 +18,6 @@ const FilterTag = ({ title }: IFilterTag) => {
 export default FilterTag;
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 10,
-  },
   tag: {
     maxWidth: 100,
     paddingVertical: 12,

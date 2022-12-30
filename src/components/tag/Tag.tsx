@@ -21,12 +21,8 @@ const Tag = ({ title, type }: ITag) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={{ ...tagStyles[type].type, ...styles.tag }}>
-        <Text style={{ ...tagStyles[type].title, ...styles.title }}>
-          {title}
-        </Text>
-      </View>
+    <View style={{ ...tagStyles[type].type, ...styles.tag }}>
+      <Text style={{ ...tagStyles[type].title, ...styles.title }}>{title}</Text>
     </View>
   );
 };
@@ -34,9 +30,6 @@ const Tag = ({ title, type }: ITag) => {
 export default Tag;
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 10,
-  },
   tag: {
     maxWidth: 90,
     paddingVertical: 8,
