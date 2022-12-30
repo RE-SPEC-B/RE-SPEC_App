@@ -1,6 +1,10 @@
-import React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./RootNavigator";
 
-const Navigation = () => {
-};
-
-export default Navigation;
+export default function Navigation() {
+  return (
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
+}
