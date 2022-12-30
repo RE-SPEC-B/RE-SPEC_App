@@ -1,72 +1,64 @@
-import SvgIcon from "@components/svg/SvgIcon";
 import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
 import { Fonts } from "@styles/font";
-import { useEffect, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import { SvgIconProps } from "@components/svg/SvgIcon";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-interface ITagProps {
-  onChange?: () => void;
-  selected?: boolean;
-  emoji?: string;
-  label?: string;
-  svg?: SvgIconProps["name"];
+interface ITag {
+  title: string;
+  type: string;
 }
 
-const styles = StyleSheet.create({
-  tagWrapper: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 100,
-    borderWidth: 1,
-    // width: "auto",
-  },
-  emoji: {
-    fontSize: 14,
-  },
-  labelWithEmoji: {
-    marginLeft: 6,
-  },
-});
+const Tag = ({ title, type }: ITag) => {
+  const tagStyles = {
+    black: {
+      type: styles.typeBlack,
+      title: styles.titleBlack,
+    },
+    grey: {
+      type: styles.typeGrey,
+      title: styles.titleGrey,
+    },
+  };
 
-const Tag = (props: ITagProps) => {
-  const {
-    onChange = () => console.log("tag!"),
-    selected = false,
-    emoji,
-    label,
-    svg,
-  } = props;
-  const [isSelected, setIsSelected] = useState<boolean>(selected);
-  useEffect(() => {
-    onChange();
-  }, [isSelected]);
   return (
-    <TouchableOpacity
-      style={[
-        styles.tagWrapper,
-        isSelected
-          ? {
-              backgroundColor: "#E5FCFD",
-              borderColor: EBrandColor.MAIN_TEXT,
-            }
-          : {
-              backgroundColor: "#FFFFFF",
-              borderColor: "#CCCCCC",
-            },
-      ]}
-      onPress={() => setIsSelected((state) => !state)}
-    >
-      <Text style={styles.emoji}>{emoji}</Text>
-      <Text style={[emoji && styles.labelWithEmoji, Fonts().body3]}>
-        {label}
-      </Text>
-      {svg && <SvgIcon name={svg} />}
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={{ ...tagStyles[type].type, ...styles.tag }}>
+        <Text style={{ ...tagStyles[type].title, ...styles.title }}>
+          {title}
+        </Text>
+      </View>
+    </View>
   );
 };
 
 export default Tag;
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 10,
+  },
+  tag: {
+    maxWidth: 90,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+  typeBlack: {
+    backgroundColor: EBgColor.BG_BLACK,
+  },
+  typeGrey: {
+    backgroundColor: EBgColor.BG_GRAY,
+    borderColor: EBgColor.LN_GRAY,
+    borderWidth: 1,
+  },
+  title: {
+    textAlign: "center",
+    ...Fonts.body3,
+  },
+  titleBlack: {
+    color: "white",
+  },
+  titleGrey: {
+    color: EFontColor.SUB_GRAY,
+  },
+});

@@ -28,7 +28,6 @@ const Button = ({ title, disabled }: IButton) => {
           style={{
             ...styles.title,
             ...disabledTitle,
-            ...Fonts.body1,
           }}
         >
           {title}
@@ -58,6 +57,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     color: "white",
+    ...Fonts.body1,
   },
   disabledTitleColor: {
     color: EFontColor.SUB_GRAY,
