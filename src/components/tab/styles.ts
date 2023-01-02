@@ -12,7 +12,6 @@ const tabStyles = {
     tabItem: {
       flexDirection: "column",
       justifyContent: "flex-start",
-      borderBottomWidth: 4,
       height: "100%",
       marginLeft: 16,
     },
@@ -31,7 +30,6 @@ const tabStyles = {
     tabItem: {
       flexDirection: "column",
       justifyContent: "flex-start",
-      borderBottomWidth: 4,
       height: "100%",
       marginLeft: 16,
     },
@@ -50,7 +48,6 @@ const tabStyles = {
     tabItem: {
       flexDirection: "column",
       justifyContent: "flex-start",
-      borderBottomWidth: 4,
       height: "100%",
       minWidth: 85,
     },
