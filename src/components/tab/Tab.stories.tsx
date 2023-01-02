@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react-native";
 import Tab from "./Tab";
 
-const twoTier = [
+export const twoTier = [
   {
     disabled: false,
     label: "멘토소개",
@@ -14,7 +14,7 @@ const twoTier = [
   },
 ];
 
-const threeTier = [
+export const threeTier = [
   {
     disabled: false,
     label: "멘토소개",
@@ -32,7 +32,7 @@ const threeTier = [
   },
 ];
 
-const fourTier = [
+export const fourTier = [
   {
     disabled: false,
     label: "자유글",
