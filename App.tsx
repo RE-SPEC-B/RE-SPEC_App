@@ -5,6 +5,8 @@ import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { Fonts } from "@styles/font";
 import SvgIcon from "@components/svg/SvgIcon";
 import ErrorBoundary from "@components/errorBoundary/ErrorBoundary";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "@navigations/RootNavigator";
 // import { LOAD_STORYBOOK } from "@env";
 
 const LOAD_STORYBOOK = false;
@@ -12,24 +14,27 @@ const LOAD_STORYBOOK = false;
 const App = () => {
   const Font = Fonts();
   return (
-    <ErrorBoundary fallback={<View></View>}>
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <View>
-            <Text style={Font.title1}>테스트</Text>
-            <Text style={Font.title2}>테스트</Text>
-            <Text style={Font.body1}>테스트</Text>
-            <Text style={Font.body2}>테스트</Text>
-            <Text style={Font.body3}>테스트</Text>
-            <SvgIcon name={"add"} />
-            <SvgIcon name={"communityOff"} />
-            <SvgIcon name={"homeOff"} />
-            <SvgIcon name={"homeOn"} />
-            <SvgIcon name={"pen"} />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </ErrorBoundary>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+    // <ErrorBoundary fallback={<View></View>}>
+    //   <SafeAreaView>
+    //     <ScrollView contentInsetAdjustmentBehavior="automatic">
+    //       <View>
+    //         <Text style={Font.title1}>테스트</Text>
+    //         <Text style={Font.title2}>테스트</Text>
+    //         <Text style={Font.body1}>테스트</Text>
+    //         <Text style={Font.body2}>테스트</Text>
+    //         <Text style={Font.body3}>테스트</Text>
+    //         <SvgIcon name={"add"} />
+    //         <SvgIcon name={"communityOff"} />
+    //         <SvgIcon name={"homeOff"} />
+    //         <SvgIcon name={"homeOn"} />
+    //         <SvgIcon name={"pen"} />
+    //       </View>
+    //     </ScrollView>
+    //   </SafeAreaView>
+    // </ErrorBoundary>
   );
 };
 
