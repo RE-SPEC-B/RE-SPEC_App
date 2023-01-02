@@ -1,10 +1,11 @@
-import { EBgColor } from "@styles/color";
+import { EFontColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
-import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import tabStyles from "./styles";
+import useTab from "./useTab";
 
-interface ITabOptions<T> {
+export interface ITabOptions<T> {
   disabled: boolean;
   label: string;
   value: T;
@@ -27,11 +28,29 @@ const Tab = <T,>(props: ITabProps<T>) => {
         return tabStyles.fourTier;
     }
   };
+  const { selected, changeSelected } = useTab(options);
   return (
     <View style={styles().tabWrapper}>
-      {options.map((option) => (
-        <TouchableOpacity style={styles().tabItem} key={`tab_${option.value}`}>
-          <Text style={[Font.title2, styles().tabLabel]}>{option.label}</Text>
+      {options.map(({ disabled, label, value }) => (
+        <TouchableOpacity
+          style={[
+            styles().tabItem,
+            value === selected && { borderBottomWidth: 4 },
+          ]}
+          key={`tab_${value}`}
+          onPress={() => changeSelected(value)}
+        >
+          <Text
+            style={[
+              Font.title2,
+              styles().tabLabel,
+              value === selected
+                ? { color: EFontColor.MAIN_BLACK }
+                : { color: EFontColor.DISABLED },
+            ]}
+          >
+            {label}
+          </Text>
         </TouchableOpacity>
       ))}
     </View>
