@@ -7,19 +7,20 @@ import SvgIcon from "@components/svg/SvgIcon";
 import ErrorBoundary from "@components/errorBoundary/ErrorBoundary";
 // import { LOAD_STORYBOOK } from "@env";
 
-const LOAD_STORYBOOK = true;
+const LOAD_STORYBOOK = false;
 
 const App = () => {
+  const Font = Fonts();
   return (
     <ErrorBoundary fallback={<View></View>}>
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <View>
-            <Text style={Fonts.title1}>테스트</Text>
-            <Text style={Fonts.title2}>테스트</Text>
-            <Text style={Fonts.body1}>테스트</Text>
-            <Text style={Fonts.body2}>테스트</Text>
-            <Text style={Fonts.body3}>테스트</Text>
+            <Text style={Font.title1}>테스트</Text>
+            <Text style={Font.title2}>테스트</Text>
+            <Text style={Font.body1}>테스트</Text>
+            <Text style={Font.body2}>테스트</Text>
+            <Text style={Font.body3}>테스트</Text>
             <SvgIcon name={"add"} />
             <SvgIcon name={"communityOff"} />
             <SvgIcon name={"homeOff"} />
