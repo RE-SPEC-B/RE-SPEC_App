@@ -1,3 +1,4 @@
+import CalendarDrawer from "@components/calendarDrawer/CalendarDrawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "@screens/LoginScreen";
 import RegisterScreen from "@screens/RegisterScreen";
@@ -10,7 +11,7 @@ const LoginNavigations = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="LoginScreen"
-        component={LoginScreen}
+        component={CalendarDrawer}
         options={{ headerShown: false }}
       />
       <Stack.Screen
