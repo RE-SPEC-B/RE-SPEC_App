@@ -1,8 +1,10 @@
 import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
-import { useState } from "react";
+import { Fonts } from "@styles/font";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface ITagProps {
+  onChange?: () => void;
   selected?: boolean;
   emoji?: string;
   label?: string;
@@ -10,37 +12,54 @@ interface ITagProps {
 
 const styles = StyleSheet.create({
   tagWrapper: {
-    display: "flex",
+    alignSelf: "flex-start",
     flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 100,
     borderWidth: 1,
     // width: "auto",
   },
+  emoji: {
+    fontSize: 14,
+  },
+  labelWithEmoji: {
+    marginLeft: 6,
+  },
 });
 
 const Tag = (props: ITagProps) => {
-  const { selected = false, emoji, label } = props;
+  const {
+    onChange = () => console.log("tag!"),
+    selected = false,
+    emoji,
+    label,
+  } = props;
   const [isSelected, setIsSelected] = useState<boolean>(selected);
+  useEffect(() => {
+    onChange();
+  }, [isSelected]);
   return (
     <TouchableOpacity
       style={[
         styles.tagWrapper,
         isSelected
           ? {
-              backgroundColor: EBgColor.BG_MINT,
+              backgroundColor: "#E5FCFD",
               borderColor: EBrandColor.MAIN_TEXT,
             }
           : {
-              backgroundColor: EBgColor.BG_WHITE,
-              borderColor: EBgColor.LN_GRAY,
+              backgroundColor: "#FFFFFF",
+              borderColor: "#CCCCCC",
             },
       ]}
-      onPress={() => setIsSelected(!selected)}
+      onPress={() => setIsSelected((state) => !state)}
     >
-      {emoji}
-      <Text>{label}</Text>
+      <Text style={styles.emoji}>{emoji}</Text>
+      <Text style={[emoji && styles.labelWithEmoji, Fonts().body3]}>
+        {label}
+      </Text>
     </TouchableOpacity>
   );
 };
