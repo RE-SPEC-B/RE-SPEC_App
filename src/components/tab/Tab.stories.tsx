@@ -1,4 +1,5 @@
 import { storiesOf } from "@storybook/react-native";
+import Filter from "./Filter";
 import Tab from "./Tab";
 
 export const twoTier = [
@@ -55,7 +56,31 @@ export const fourTier = [
   },
 ];
 
+export const fourTierFilter = [
+  {
+    disabled: false,
+    label: "경력",
+    value: "경력",
+  },
+  {
+    disabled: false,
+    label: "학력",
+    value: "학력",
+  },
+  {
+    disabled: false,
+    label: "회사",
+    value: "회사",
+  },
+  {
+    disabled: false,
+    label: "기능",
+    value: "기능",
+  },
+];
+
 storiesOf("Tab", module)
   .add("twoTier", () => <Tab options={twoTier} />)
   .add("threeTier", () => <Tab options={threeTier} />)
-  .add("fourTier", () => <Tab options={fourTier} />);
+  .add("fourTier", () => <Tab options={fourTier} />)
+  .add("filter", () => <Filter options={fourTierFilter} />);
