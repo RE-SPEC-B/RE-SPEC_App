@@ -1,13 +1,16 @@
+import SvgIcon from "@components/svg/SvgIcon";
 import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { SvgIconProps } from "@components/svg/SvgIcon";
 
 interface ITagProps {
   onChange?: () => void;
   selected?: boolean;
   emoji?: string;
   label?: string;
+  svg?: SvgIconProps["name"];
 }
 
 const styles = StyleSheet.create({
@@ -35,6 +38,7 @@ const Tag = (props: ITagProps) => {
     selected = false,
     emoji,
     label,
+    svg,
   } = props;
   const [isSelected, setIsSelected] = useState<boolean>(selected);
   useEffect(() => {
@@ -60,6 +64,7 @@ const Tag = (props: ITagProps) => {
       <Text style={[emoji && styles.labelWithEmoji, Fonts().body3]}>
         {label}
       </Text>
+      {svg && <SvgIcon name={svg} />}
     </TouchableOpacity>
   );
 };
