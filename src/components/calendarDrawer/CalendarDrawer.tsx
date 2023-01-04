@@ -1,34 +1,46 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import React, { useCallback, useMemo, useRef } from "react";
-import BottomSheet from '@gorhom/bottom-sheet';
+import {
+  BottomSheetModal,
+  BottomSheetModalProvider,
+} from "@gorhom/bottom-sheet";
 import CustomBackdrop from "./CustomBackdrop";
+import { Fonts } from "@styles/font";
+import DatePicker from "./DatePicker";
 
 const CalendarDrawer = () => {
-	const bottomSheetRef = useRef<BottomSheet>(null);
+  // ref
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   // variables
-  const snapPoints = useMemo(() => ["10%", "50%"], []);
+  const snapPoints = useMemo(() => ["20%", "60%"], []);
 
   // callbacks
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
   const handleSheetChanges = useCallback((index: number) => {
     console.log("handleSheetChanges", index);
   }, []);
 
   return (
-    <View style={styles.view}>
-      <Text>LoginScreen</Text>
-			<BottomSheet
-        ref={bottomSheetRef}
-        index={1}
-        snapPoints={snapPoints}
-				backdropComponent={CustomBackdrop}
-        onChange={handleSheetChanges}
-      >
-        <View style={styles.contentContainer}>
-          <Text>Awesome 🎉</Text>
-        </View>
-      </BottomSheet>
-    </View>
+    <BottomSheetModalProvider>
+      <View style={styles.view}>
+        <Button onPress={handlePresentModalPress} title="Present Modal" />
+        <BottomSheetModal
+          ref={bottomSheetModalRef}
+          index={1}
+          snapPoints={snapPoints}
+          backdropComponent={CustomBackdrop}
+          onChange={handleSheetChanges}
+        >
+          <View style={styles.contentContainer}>
+            <DatePicker />
+
+          </View>
+        </BottomSheetModal>
+      </View>
+    </BottomSheetModalProvider>
   );
 };
 
@@ -38,14 +50,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-	container: {
+  container: {
     flex: 1,
     padding: 24,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
   },
   contentContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
+  },
+  modalDateTitle: {
+    color: "black",
+    ...Fonts().body4,
+    fontSize: 20,
+		marginTop: 54,
   },
 });
 
