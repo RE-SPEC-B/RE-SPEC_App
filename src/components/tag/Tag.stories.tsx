@@ -3,4 +3,5 @@ import Tag from "./Tag";
 
 storiesOf("Tag", module)
   .add("label", () => <Tag label="zz" />)
-  .add("withEmoji", () => <Tag label="동문보기" emoji="🙌" />);
+  .add("withEmoji", () => <Tag label="동문보기" emoji="🙌" />)
+  .add("withSvg", () => <Tag svg={"filter"} />);
