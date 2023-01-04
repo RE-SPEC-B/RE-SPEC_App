@@ -4,25 +4,25 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 interface ITag {
-  title: string;
+  label: string;
   type: string;
 }
 
-const Tag = ({ title, type }: ITag) => {
+const Tag = ({ label, type }: ITag) => {
   const tagStyles = {
     black: {
       type: styles.typeBlack,
-      title: styles.titleBlack,
+      label: styles.labelBlack,
     },
     grey: {
       type: styles.typeGrey,
-      title: styles.titleGrey,
+      label: styles.labelGrey,
     },
   };
 
   return (
     <View style={{ ...tagStyles[type].type, ...styles.tag }}>
-      <Text style={{ ...tagStyles[type].title, ...styles.title }}>{title}</Text>
+      <Text style={{ ...tagStyles[type].label, ...styles.label }}>{label}</Text>
     </View>
   );
 };
@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
     borderColor: EBgColor.LN_GRAY,
     borderWidth: 1,
   },
-  title: {
+  label: {
     textAlign: "center",
     ...Fonts.body3,
   },
-  titleBlack: {
+  labelBlack: {
     color: "white",
   },
-  titleGrey: {
+  labelGrey: {
     color: EFontColor.SUB_GRAY,
   },
 });

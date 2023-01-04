@@ -4,13 +4,13 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 interface IButton {
-  title: string;
+  label: string;
   disabled: boolean;
 }
 
-const Button = ({ title, disabled }: IButton) => {
+const Button = ({ label, disabled }: IButton) => {
   const disabledButton = disabled ? styles.disabledButtonColor : {};
-  const disabledTitle = disabled ? styles.disabledTitleColor : {};
+  const disabledLabel = disabled ? styles.disabledLabelColor : {};
 
   return (
     <TouchableOpacity
@@ -19,11 +19,11 @@ const Button = ({ title, disabled }: IButton) => {
     >
       <Text
         style={{
-          ...styles.title,
-          ...disabledTitle,
+          ...styles.label,
+          ...disabledLabel,
         }}
       >
-        {title}
+        {label}
       </Text>
     </TouchableOpacity>
   );
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
   disabledButtonColor: {
     backgroundColor: EBgColor.BG_GRAY,
   },
-  title: {
+  label: {
     textAlign: "center",
     color: "white",
     ...Fonts.body1,
   },
-  disabledTitleColor: {
+  disabledLabelColor: {
     color: EFontColor.SUB_GRAY,
   },
 });

@@ -4,13 +4,13 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 interface IFilterTag {
-  title: string;
+  label: string;
 }
 
-const FilterTag = ({ title }: IFilterTag) => {
+const FilterTag = ({ label }: IFilterTag) => {
   return (
     <View style={styles.tag}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.label}>{label}</Text>
     </View>
   );
 };
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: EBrandColor.MAIN_TEXT,
   },
-  title: {
+  label: {
     textAlign: "center",
     color: "white",
     ...Fonts.body4,
