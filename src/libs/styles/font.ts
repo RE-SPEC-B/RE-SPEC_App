@@ -14,6 +14,7 @@ export const Fonts = () => {
       body1: {
         fontWeight: "bold",
         fontSize: 18,
+        lineHeight: 20,
       },
       body2: {
         fontWeight: "bold",
