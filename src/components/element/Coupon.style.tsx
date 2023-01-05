@@ -1,5 +1,4 @@
 import { Platform, StyleSheet } from "react-native";
-import { EColor } from "@styles/color";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +7,7 @@ const styles = StyleSheet.create({
     width: 342,
     flexDirection: "row",
     borderRadius: 12,
-    backgroundColor: EColor.GRAY_50,
+    backgroundColor: "#FFFFFF",
     ...Platform.select({
         ios: {
             shadowColor: "rgba(0,0,0,0.1)",
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     justifyContent: "center",
     borderStyle: 'dotted',
-    borderColor: EColor.GRAY_300,
+    borderColor: '#EEEEEE',
     ...Platform.select({
         ios: {
             borderWidth: 1, 
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     })
   },
   descriptionText: {
-    color: EColor.GRAY_600,
+    color: '#5A6166',
     fontWeight: '700',
     ...Platform.select({
         ios: {
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     })
   },
   titleText: {
-    color: EColor.GRAY_900,
+    color: '#000000',
     fontWeight: '400',
     ...Platform.select({
         ios: {
@@ -87,13 +86,13 @@ const styles = StyleSheet.create({
   dDayIcon: {
     paddingHorizontal:8,
     paddingVertical: 4,
-    backgroundColor: EColor.GRAY_700,
-    color: EColor.MINT_500,
+    backgroundColor: '#374553',
+    color: '#00DFEB',
     borderRadius: 4,
     overflow: 'hidden',
   },
   dateText: {
-    color: EColor.GRAY_500,
+    color: '#999FA4',
     fontWeight: '500',
     marginLeft: 8
   }
@@ -108,14 +107,14 @@ const retainedStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     paddingHorizontal: 24,
-    color: EColor.GRAY_300,
+    color: '#EEEEEE',
   },
   svgBox: {
     width: 24,
     height: 24,
     alignItems: 'center',
     justifyContent:'center',
-    borderColor: EColor.GRAY_300,
+    borderColor: '#EEEEEE',
     borderWidth: 1,
     marginBottom: 4
   },
@@ -134,7 +133,7 @@ const retainedStyles = StyleSheet.create({
     paddingLeft: 24,
     justifyContent: "center",
     borderStyle: 'dotted',
-    borderColor: EColor.GRAY_300,
+    borderColor: '#EEEEEE',
     ...Platform.select({
         ios: {
             borderWidth: 1, 
@@ -149,7 +148,7 @@ const retainedStyles = StyleSheet.create({
   },
   descriptionText: {
     fontWeight: '700',
-    color: EColor.GRAY_300,
+    color: '#EEEEEE',
     ...Platform.select({
         ios: {
             marginBottom: 8,
@@ -158,7 +157,7 @@ const retainedStyles = StyleSheet.create({
   },
   titleText: {
     fontWeight: '400',
-    color: EColor.GRAY_300,
+    color: '#EEEEEE',
     ...Platform.select({
         ios: {
             marginBottom: 15,
@@ -169,7 +168,7 @@ const retainedStyles = StyleSheet.create({
     })
   },
   dateText: {
-    color: EColor.GRAY_300,
+    color: '#EEEEEE',
     fontWeight: '500',
   }
 })
