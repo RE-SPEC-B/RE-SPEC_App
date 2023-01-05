@@ -40,7 +40,7 @@
         "./src/types/*"
       ],
       "@utils/*": [
-        "./utils/*"
+        "./src/utils/*"
       ],
     },
   },
