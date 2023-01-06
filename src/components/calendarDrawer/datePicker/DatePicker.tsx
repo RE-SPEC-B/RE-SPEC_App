@@ -51,6 +51,7 @@ const DatePicker = () => {
   const nowDate = new Date();
   const minDate = format(addDays(nowDate, 1), "yyyy-MM-dd");
   const maxDate = format(addWeeks(nowDate, 3), "yyyy-MM-dd");
+
   const [selected, setSelected] = useState({ [minDate]: { selected: true } });
 
   const onDayPress = useCallback((day) => {
