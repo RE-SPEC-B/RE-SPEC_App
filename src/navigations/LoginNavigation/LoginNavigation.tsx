@@ -12,7 +12,7 @@ const LoginNavigations = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="LoginScreen"
-        component={CalendarDrawer}
+        component={SelectTime}
         options={{ headerShown: false }}
       />
       <Stack.Screen

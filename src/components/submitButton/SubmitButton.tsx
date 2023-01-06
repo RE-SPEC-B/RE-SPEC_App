@@ -1,10 +1,11 @@
-import { View, Text, TouchableHighlight } from "react-native";
+import { Text, TouchableHighlight } from "react-native";
 import React from "react";
+import { styles } from "./styles";
 
 const SubmitButton = () => {
   return (
-    <TouchableHighlight>
-      <Text>확인</Text>
+    <TouchableHighlight style={styles.button}>
+      <Text style={styles.text}>확인</Text>
     </TouchableHighlight>
   );
 };
