@@ -11,12 +11,14 @@ export type BottomBarNavigator = {
 };
 
 export type LoginStackParamList = {
+  Home: undefined;
   Login: undefined;
   Register: undefined;
 };
 
 export type CommunityStackParamList = {
   Home: undefined;
+  Community: undefined;
 };
 
 export type HomeStackParamList = {
@@ -25,8 +27,10 @@ export type HomeStackParamList = {
 
 export type MyPageStackParamList = {
   Home: undefined;
+  MyPage: undefined;
 };
 
 export type SearchMentorStackParamList = {
-  Home: undefined;
+  MentorMain: undefined;
+  MentorDetail: undefined;
 };
