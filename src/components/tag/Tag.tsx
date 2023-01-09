@@ -1,5 +1,5 @@
 import SvgIcon from "@components/svg/SvgIcon";
-import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
+import { EBgColor, EBrandColor, EColor, EFontColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
@@ -50,12 +50,12 @@ const Tag = (props: ITagProps) => {
         styles.tagWrapper,
         isSelected
           ? {
-              backgroundColor: "#E5FCFD",
+              backgroundColor: EColor.MINT_50,
               borderColor: EBrandColor.MAIN_TEXT,
             }
           : {
-              backgroundColor: "#FFFFFF",
-              borderColor: "#CCCCCC",
+              backgroundColor: EColor.GRAY_50,
+              borderColor: EColor.GRAY_400,
             },
       ]}
       onPress={() => setIsSelected((state) => !state)}
