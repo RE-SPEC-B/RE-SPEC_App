@@ -1,4 +1,4 @@
-import {EBrandColor } from "@styles/color";
+import { EColor } from "@styles/color";
 import SvgIcon from "@components/svg/SvgIcon";
 import React, { useState } from "react";
 import {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
       height: 40,
       borderWidth: 1,
       borderRadius: 26.5,
-      borderColor: EBrandColor.MAIN_TEXT,
+      borderColor: EColor.MINT_500,
       backgroundColor: "#FFFFFF",
       paddingHorizontal: 8,
     },
