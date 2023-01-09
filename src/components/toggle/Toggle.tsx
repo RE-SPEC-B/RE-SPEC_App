@@ -1,3 +1,4 @@
+import { EColor } from "@styles/color";
 import React from "react";
 import { TouchableOpacity, Switch, StyleSheet } from "react-native";
 
@@ -20,7 +21,7 @@ const Toggle = (props: IToggle) => {
     defaultValue = false,
     disabled = false,
     onChange = () => console.log("toggle!"),
-    onToggleColor = "#00DFEB",
+    onToggleColor = EColor.MINT_500,
   } = props;
   return (
     <TouchableOpacity>
