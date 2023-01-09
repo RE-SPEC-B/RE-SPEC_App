@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStackParamList } from "@types/navigations";
+import { RootStackParamList } from "src/defines/navigations";
 import LoginNavigations from "./LoginNavigation/LoginNavigation";
 import MainNavigations from "./MainNavigation/MainNavigation";
 
@@ -9,12 +9,12 @@ const RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="LoginNavigation"
+        name="Login"
         component={LoginNavigations}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="MainNavigation"
+        name="Main"
         component={MainNavigations}
         options={{ headerShown: false }}
       />
