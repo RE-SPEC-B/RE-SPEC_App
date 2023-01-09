@@ -37,7 +37,7 @@
         "./src/states/*"
       ],
       "@defines/*": [
-        "src/defines/*/*"
+        "./src/defines/*"
       ],
       "@utils/*": [
         "./src/utils/*"
