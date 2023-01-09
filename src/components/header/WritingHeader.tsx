@@ -11,14 +11,15 @@ import {
 
 
 const WritingHeader = () => {
+  const font = Fonts();
   return (
     <View style={styles.container}>
         <View style={styles.wrap}>
             <SvgIcon name="prev"/>
-            <Text style={{...Fonts.title2, ...styles.titleStyle}}>글쓰기</Text>
+            <Text style={{ ...styles.titleStyle, ...font.title2}}>글쓰기</Text>
         </View>
         <TouchableOpacity>
-            <Text style={{...Fonts.title2, ...styles.titleStyle}}>완료</Text>
+            <Text style={{...styles.titleStyle, ...font.title2}}>완료</Text>
         </TouchableOpacity>
     </View>
   );

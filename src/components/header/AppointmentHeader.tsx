@@ -1,6 +1,6 @@
 import SvgIcon from "@components/svg/SvgIcon";
 import React from "react";
-// import { Fonts } from "@styles/font";
+import { Fonts } from "@styles/font";
 import {
   View,
   Text,
@@ -8,10 +8,11 @@ import {
 } from "react-native";
 
 const AppointmentHeader = () => {
+  const font = Fonts();
   return (
     <View style={styles.container}>
         <SvgIcon name="prev"/>
-        <Text style={{...styles.titleStyle}}>멘토링 예약</Text>
+        <Text style={{...styles.titleStyle, ...font.title2}}>멘토링 예약</Text>
     </View>
   );
 };
@@ -28,9 +29,8 @@ const styles = StyleSheet.create({
     marginVertical: 24,
   },
   titleStyle: {
-    fontSize: 22,
+    lineHeight: 30,
     marginHorizontal: 16,
-    fontWeight: "bold",
     color: "#000000"
   }
 });
