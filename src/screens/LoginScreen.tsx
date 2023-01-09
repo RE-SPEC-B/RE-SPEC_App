@@ -7,7 +7,7 @@ const LoginScreen = ({ navigation }) => {
       <Text>LoginScreen</Text>
       <Button
         title="다음 페이지로 이동"
-        onPress={() => navigation.navigate("RegisterScreen")}
+        onPress={() => navigation.navigate("Register")}
       />
     </View>
   );
