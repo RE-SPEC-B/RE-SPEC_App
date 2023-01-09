@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
-import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
+import { EColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 
 interface IInput {
@@ -42,17 +42,17 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 18,
     paddingHorizontal: 16,
-    backgroundColor: EBgColor.BG_GRAY,
-    color: EFontColor.MAIN_BLACK,
+    backgroundColor: EColor.GRAY_100,
+    color: EColor.GRAY_900,
     borderWidth: 1,
-    borderColor: EBgColor.LN_GRAY,
+    borderColor: EColor.GRAY_300,
     borderRadius: 8,
-    placeholder: EFontColor.SUB_GRAY,
-    ...Fonts.body3,
+    placeholder: EColor.GRAY_500,
+    ...Fonts().body3,
   },
   inputFocus: {
     // TODO: enum change
-    backgroundColor: "#E5FCFD",
-    borderColor: EBrandColor.MAIN_TEXT,
+    backgroundColor: EColor.MINT_50,
+    borderColor: EColor.MINT_500,
   },
 });
