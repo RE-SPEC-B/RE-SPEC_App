@@ -1,4 +1,4 @@
-import { EBgColor, EBrandColor, EFontColor } from "@styles/color";
+import { EColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
@@ -36,19 +36,19 @@ const styles = StyleSheet.create({
     paddingVertical: 21,
     paddingHorizontal: 16,
     borderWidth: 1,
-    borderColor: EBgColor.LN_GRAY,
+    borderColor: EColor.LN_GRAY,
     borderRadius: 8,
-    backgroundColor: EBrandColor.MAIN_TEXT,
+    backgroundColor: EColor.MAIN_TEXT,
   },
   disabledButtonColor: {
-    backgroundColor: EBgColor.BG_GRAY,
+    backgroundColor: EColor.BG_GRAY,
   },
   label: {
     textAlign: "center",
     color: "white",
-    ...Fonts.body1,
+    ...Fonts().body1,
   },
   disabledLabelColor: {
-    color: EFontColor.SUB_GRAY,
+    color: EColor.SUB_GRAY,
   },
 });
