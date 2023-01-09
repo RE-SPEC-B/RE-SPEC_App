@@ -7,7 +7,7 @@ const RegisterScreen = ({ navigation }) => {
       <Text>RegisterScreen</Text>
       <Button
         title="홈 화면으로 이동하기"
-        onPress={() => navigation.navigate("MainNavigation")}
+        onPress={() => navigation.navigate("Main")}
       />
     </View>
   );

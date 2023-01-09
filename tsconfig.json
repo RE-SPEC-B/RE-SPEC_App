@@ -36,8 +36,8 @@
       "@states/*": [
         "./src/states/*"
       ],
-      "@types/*": [
-        "./src/types/*"
+      "@defines/*": [
+        "./src/defines/*"
       ],
       "@utils/*": [
         "./src/utils/*"

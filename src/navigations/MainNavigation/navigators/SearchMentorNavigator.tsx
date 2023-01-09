@@ -1,15 +1,21 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SearchMentorScreen from "@screens/SearchMentorScreen";
-import { SearchMentorStackParamList } from "@types/navigations";
+import MentorDetailScreen from "@screens/SearchMentor/MentorDetailScreen";
+import MentorMainScreen from "@screens/SearchMentor/MentorMainScreen";
+import { SearchMentorStackParamList } from "@defines/navigations";
 
 const Stack = createNativeStackNavigator<SearchMentorStackParamList>();
 
-const SearchMentorNavigator = () => {
+const SearchMentorNavigator = ({ navigation }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="SearchMentorScreen"
-        component={SearchMentorScreen}
+        name="MentorMain"
+        component={MentorMainScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MentorDetail"
+        component={MentorDetailScreen}
         options={{ headerShown: false }}
       />
       {/* <Stack.Screen /> */}
