@@ -9,12 +9,7 @@ import {
 import Profile from "./Profile";
 import { EColor } from "@styles/color";
 
-interface IProfile {
-    imageUri?: string
-  }
-
-const ProfileEdit = (props: IProfile) => {
-    const { imageUri = "https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792__480.png" } = props;
+const ProfileEdit = ({imageUri}: {imageUri:string|any|null}) => {
     const [image, setImage] = useState<string>(imageUri);
 
     const onPressEditImage = () => {
