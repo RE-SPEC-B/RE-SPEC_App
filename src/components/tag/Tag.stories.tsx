@@ -3,6 +3,7 @@ import Tag from "./Tag";
 import FilterTag from "./FilterTag";
 
 storiesOf("Tag", module)
-  .add("black", () => <Tag label={"#1~4년차"} type={"black"} />)
-  .add("grey", () => <Tag label={"전문적인"} type={"grey"} />)
-  .add("mint", () => <FilterTag label={"#국내MBA"} />);
+  .add("label", () => <Tag label="zz" />)
+  .add("labelBig", () => <Tag size="big" label="#국내MBA" />)
+  .add("withEmoji", () => <Tag label="동문보기" emoji="🙌" />)
+  .add("withSvg", () => <Tag svg={"filter"} />);
