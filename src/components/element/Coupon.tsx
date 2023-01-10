@@ -1,17 +1,6 @@
-import SvgIcon from "@components/svg/SvgIcon";
 import React, { useEffect, useState } from "react";
-import { useSize } from "@hooks/useSize";
-import { Fonts } from "@styles/font";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Platform,
-  TouchableOpacity
-} from "react-native";
-import { styles, retainedStyles } from "./Coupon.style";
-import { dateCounting } from "@utils/dateCounting";
-import { dateToString } from "@utils/dateToString";
+import CouponAble from "./CouponAble";
+import CouponDisable from "./CouponDisable";
 
 interface ICouponProps {
     retained: boolean;      //해당 쿠폰 보유 여부
@@ -21,13 +10,7 @@ interface ICouponProps {
   }
 
 const Coupon = ({retained, title, description, endDate}: ICouponProps) => {
-    const Font = Fonts();
-    const componentSize = useSize(342);
-    const contentSize = useSize(264);
-    const svgWrapSize = useSize(78);
     const [retainedState, setRetainedState] = useState<boolean>(retained);
-    const dDayCount = dateCounting(endDate);
-    const stringDate = dateToString(endDate);
 
     useEffect(()=>{
     }, [retainedState]);
@@ -38,46 +21,11 @@ const Coupon = ({retained, title, description, endDate}: ICouponProps) => {
 
     if(retainedState){
         return(
-        <View style={{...styles.container, width: componentSize.width}}>
-          <View style={{...styles.borderWrap, width: contentSize.width}}>
-              <View style={{...retainedStyles.content, width: contentSize.width}}>
-                  <Text style={{...Font.body3, ...retainedStyles.descriptionText}}>{description}</Text>
-                  <Text style={{...Font.title2, ...retainedStyles.titleText}}>{title}</Text>
-                  <View style={{...Font.body4, ...styles.dateWrap}}>
-                      <Text style={retainedStyles.dateText}>{stringDate}까지</Text>
-                  </View>
-              </View>
-          </View>
-          <View style={{...styles.svgWrap, width: svgWrapSize.width}}>
-              <View style={retainedStyles.svgBox}>
-                <SvgIcon name="downloadComplete"/>
-              </View>
-              <Text style={{...retainedStyles.descriptionText, width: 26}}>
-                완료
-              </Text>
-          </View>
-      </View>
+          <CouponDisable title={title} endDate={endDate} description={description} />
         )
     }
     return (
-      <View style={{...styles.container, width: componentSize.width}}>
-          <View style={{...styles.borderWrap, width: contentSize.width}}>
-              <View style={{...styles.content, width: contentSize.width}}>
-                  <Text style={{...Font.body3, ...styles.descriptionText}}>{description}</Text>
-                  <Text style={{...Font.title2, ...styles.titleText}}>{title}</Text>
-                  <View style={{...Font.body4, ...styles.dateWrap}}>
-                      <Text style={styles.dDayIcon}>D-{dDayCount}</Text>
-                      <Text style={styles.dateText}>{stringDate}까지</Text>
-                  </View>
-              </View>
-          </View>
-          <TouchableOpacity 
-            style={{...styles.svgWrap, width: svgWrapSize.width}}
-            onPress={onPressGetCoupon}
-          >
-              <SvgIcon name="download"/>
-          </TouchableOpacity>
-      </View>
+      <CouponAble title={title} endDate={endDate} description={description} onPressGetCoupon={onPressGetCoupon}/>
     );
 };
 
