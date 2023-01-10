@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CouponAble from "./CouponAble";
-import CouponDisable from "./CouponDisable";
+import CouponAvailable from "./CouponAvailable";
+import CouponUsed from "./CouponUsed";
 
 interface ICouponProps {
     retained: boolean;      //해당 쿠폰 보유 여부
@@ -21,11 +21,11 @@ const Coupon = ({retained, title, description, endDate}: ICouponProps) => {
 
     if(retainedState){
         return(
-          <CouponDisable title={title} endDate={endDate} description={description} />
+          <CouponUsed title={title} endDate={endDate} description={description} />
         )
     }
     return (
-      <CouponAble title={title} endDate={endDate} description={description} onPressGetCoupon={onPressGetCoupon}/>
+      <CouponAvailable title={title} endDate={endDate} description={description} onPressGetCoupon={onPressGetCoupon}/>
     );
 };
 

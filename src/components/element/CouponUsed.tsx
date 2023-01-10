@@ -11,18 +11,17 @@ import { styles, retainedStyles } from "./Coupon.style";
 import { dateCounting } from "@utils/dateCounting";
 import { dateToString } from "@utils/dateToString";
 
-interface ICouponDisableProps {
+interface ICouponUsedProps {
     title: string;          //쿠폰 이름
     description: string;    //쿠폰 설명
     endDate: Date;             //해당 쿠폰 만료 일자
   }
 
-const CouponDisable = ({title, description, endDate}: ICouponDisableProps) => {
+const CouponUsed = ({title, description, endDate}: ICouponUsedProps) => {
     const Font = Fonts();
     const componentSize = useSize(342);
     const contentSize = useSize(264);
     const svgWrapSize = useSize(78);
-    const dDayCount = dateCounting(endDate);
     const stringDate = dateToString(endDate);
 
     return (
@@ -48,4 +47,4 @@ const CouponDisable = ({title, description, endDate}: ICouponDisableProps) => {
     );
 };
 
-export default CouponDisable;
+export default CouponUsed;

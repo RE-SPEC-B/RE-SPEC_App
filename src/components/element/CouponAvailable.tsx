@@ -11,14 +11,14 @@ import { styles } from "./Coupon.style";
 import { dateCounting } from "@utils/dateCounting";
 import { dateToString } from "@utils/dateToString";
 
-interface ICouponAbleProps {
+interface ICouponAvailableProps {
     title: string;          //쿠폰 이름
     description: string;    //쿠폰 설명
     endDate: Date;             //해당 쿠폰 만료 일자
     onPressGetCoupon(): void;
   }
 
-const CouponAble = ({title, description, endDate, onPressGetCoupon}: ICouponAbleProps) => {
+const CouponAvailable = ({title, description, endDate, onPressGetCoupon}: ICouponAvailableProps) => {
     const Font = Fonts();
     const componentSize = useSize(342);
     const contentSize = useSize(264);
@@ -48,5 +48,5 @@ const CouponAble = ({title, description, endDate, onPressGetCoupon}: ICouponAble
     );
 };
 
-export default CouponAble;
+export default CouponAvailable;
 
