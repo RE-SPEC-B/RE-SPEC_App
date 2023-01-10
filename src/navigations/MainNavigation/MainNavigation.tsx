@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomBarNavigator } from "@defines/navigations";
 import CommunityNavigator from "@navigations/MainNavigation/navigators/CommunityNavigator";
@@ -7,8 +8,6 @@ import MyPageNavigator from "@navigations/MainNavigation/navigators/MyPageNaviga
 import SearchMentorNavigator from "@navigations/MainNavigation/navigators/SearchMentorNavigator";
 import ScheduleNavigator from "./navigators/ScheduleNavigator";
 import SvgIcon from "@components/svg/SvgIcon";
-import { useSize } from "@hooks/useSize";
-import { Platform } from "react-native";
 
 const BottomTab = createBottomTabNavigator<BottomBarNavigator>();
 
