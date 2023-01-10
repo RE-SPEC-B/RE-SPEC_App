@@ -5,6 +5,7 @@ import CommunityNavigator from "@navigations/MainNavigation/navigators/Community
 import HomeNavigator from "@navigations/MainNavigation/navigators/HomeNavigator";
 import MyPageNavigator from "@navigations/MainNavigation/navigators/MyPageNavigator";
 import SearchMentorNavigator from "@navigations/MainNavigation/navigators/SearchMentorNavigator";
+import ScheduleNavigator from "./navigators/ScheduleNavigator";
 
 const BottomTab = createBottomTabNavigator<BottomBarNavigator>();
 
@@ -26,6 +27,8 @@ const MainNavigations = () => {
       />
       {/* 마이페이지 */}
       <BottomTab.Screen name={"BottomMyPage"} component={MyPageNavigator} />
+      {/* 스케쥴 */}
+      <BottomTab.Screen name={"BottomSchedule"} component={ScheduleNavigator} />
       {/* 커뮤니티 */}
       <BottomTab.Screen
         name={"BottomCommunity"}
