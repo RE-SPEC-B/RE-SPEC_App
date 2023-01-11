@@ -1,5 +1,5 @@
 export enum EColor {
-  MINT_50 = "E5FCFD", // 페이지 및 모달단위 배경
+  MINT_50 = "#E5FCFD", // 페이지 및 모달단위 배경
   MINT_500 = "#00DFEB", // 포인트컬러
   MINT_700 = "#00868D", // 포인트타이포그래피
   RED_500 = "#FF0000", // 주의 및 에러
