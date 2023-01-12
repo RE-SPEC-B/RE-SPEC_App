@@ -8,9 +8,10 @@ interface IButton {
   type: ButtonType;
   label: string;
   disabled: boolean;
+  onClick?: () => void;
 }
 
-const Button = ({ type = "primary", label, disabled }: IButton) => {
+const Button = ({ type = "primary", label, disabled, onClick }: IButton) => {
   const disabledButton = disabled ? styles.disabledButtonColor : {};
   const disabledLabel = disabled ? styles.disabledLabelColor : {};
 
@@ -18,6 +19,7 @@ const Button = ({ type = "primary", label, disabled }: IButton) => {
     <TouchableOpacity
       style={{ ...styles.button, ...colorStyles[type], ...disabledButton }}
       disabled={disabled}
+      onPress={onClick}
     >
       <Text
         style={{
