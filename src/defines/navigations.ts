@@ -34,6 +34,7 @@ export type MyPageStackParamList = {
 export type SearchMentorStackParamList = {
   MentorMain: undefined;
   MentorDetail: undefined;
+  MentorReservation: undefined;
 };
 
 export type ScheduleStackParamList = {
