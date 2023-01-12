@@ -8,7 +8,7 @@ const ScheduleNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="MyPage"
+        name="Schedule"
         component={ScheduleScreen}
         options={{ headerShown: false }}
       />
