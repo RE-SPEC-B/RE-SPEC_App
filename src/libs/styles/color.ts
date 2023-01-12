@@ -1,21 +1,16 @@
-export enum EBgColor {
-  BG_GRAY = '#F7F8F9',
-  BG_WHITE = '#EAF1F4',
-  BG_BLACK = '#1E2427',
-  BG_MINT = '#1E2427',
-  LN_GRAY = '#EEEEEE',
-}
-
-export enum EBrandColor {
-  LOGO = '#00FFFF',
-  MAIN_TEXT = '#00DFEB',
-  POINT_TEXT = '#00868D',
-}
-
-export enum EFontColor {
-  DISABLED = '#CCCCCC',
-  SUB_GRAY = '#999FA4',
-  SUB_DARK = '#5A6166',
-  SUB_BLACK = '#374553',
-  MAIN_BLACK = '#000000',
+export enum EColor {
+  MINT_50 = "#E5FCFD", // 페이지 및 모달단위 배경
+  MINT_500 = "#00DFEB", // 포인트컬러
+  MINT_700 = "#00868D", // 포인트타이포그래피
+  RED_500 = "#FF0000", // 주의 및 에러
+  BLUE_500 = "#0038FF", // 긍정
+  GRAY_50 = "#FFFFFF", // 페이지 및 모달단위 배경, 서브 타이포그래피
+  GRAY_100 = "#F7F8F9", // 페이지 및 모달단위 배경
+  GRAY_300 = "#EEEEEE", // Dividers
+  GRAY_400 = "#CCCCCC", // 서브 타이포그래피, Dividers
+  GRAY_500 = "#999FA4", // 서브 타이포그래피, Dividers
+  GRAY_600 = "#5A6166", // 서브 타이포그래피
+  GRAY_700 = "#374553", // 서브 타이포그래피
+  GRAY_800 = "#1E2427", // 서브 타이포그래피, 페이지 및 모달단위 배경
+  GRAY_900 = "#000000", // 타이틀 및 본문 타이포그래피
 }
