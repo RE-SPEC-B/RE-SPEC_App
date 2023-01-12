@@ -3,8 +3,9 @@ import { Fonts } from "@styles/font";
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
+type ButtonType = "primary" | "secondary" | "tertiary";
 interface IButton {
-  type: string;
+  type: ButtonType;
   label: string;
   disabled: boolean;
 }
