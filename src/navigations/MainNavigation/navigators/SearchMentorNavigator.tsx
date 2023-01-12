@@ -10,11 +10,6 @@ const SearchMentorNavigator = ({ navigation }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="MentorReservation"
-        component={MentorReservationScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="MentorMain"
         component={MentorMainScreen}
         options={{ headerShown: false }}
@@ -22,6 +17,11 @@ const SearchMentorNavigator = ({ navigation }) => {
       <Stack.Screen
         name="MentorDetail"
         component={MentorDetailScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MentorReservation"
+        component={MentorReservationScreen}
         options={{ headerShown: false }}
       />
       {/* <Stack.Screen /> */}
