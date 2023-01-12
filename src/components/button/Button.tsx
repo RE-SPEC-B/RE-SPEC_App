@@ -63,8 +63,8 @@ const colorStyles = StyleSheet.create({
     backgroundColor: EColor.GRAY_100,
   },
   tertiary: {
-    borderColor: EColor.GRAY_50,
-    backgroundColor: EColor.MINT_500,
+    borderColor: EColor.MINT_500,
+    backgroundColor: EColor.GRAY_50,
   },
 });
 const labelStyles = StyleSheet.create({
