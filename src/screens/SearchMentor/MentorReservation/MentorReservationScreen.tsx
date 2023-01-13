@@ -102,7 +102,7 @@ const MentorReservationScreen = () => {
           placeholder={"포트폴리오 링크를 입력해주세요."}
         /> */}
         {/* 멘토 질문 */}
-        <View style={styles.titleBox}>
+        {/* <View style={styles.titleBox}>
           <Text style={styles.mainTitle}>
             멘토에게{"\n"}궁금한 것을 적어주세요👇
           </Text>
@@ -112,8 +112,9 @@ const MentorReservationScreen = () => {
           value=""
           placeholder={"자유롭게 질문을 적어주세요."}
           multiline={true}
-        />
+        /> */}
       </View>
+      {/* 결제창 */}
       <View style={styles.payBox}>
         <View style={styles.payTextBox}>
           <Text style={styles.payTextSub}>결제금액</Text>
