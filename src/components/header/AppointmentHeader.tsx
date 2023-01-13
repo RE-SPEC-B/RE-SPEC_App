@@ -24,13 +24,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 88,
     justifyContent: "flex-start",
-    alignContent: "center",
-    marginHorizontal: 24,
-    marginVertical: 24,
+    alignItems: "center",
+    paddingHorizontal: 24,
   },
   titleStyle: {
     lineHeight: 30,
-    marginHorizontal: 16,
+    paddingHorizontal: 16,
     color: "#000000"
   }
 });

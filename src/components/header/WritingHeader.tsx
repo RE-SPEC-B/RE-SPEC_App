@@ -32,9 +32,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 88,
     justifyContent: "space-between",
-    alignContent: "center",
-    marginHorizontal: 24,
-    marginVertical: 24,
+    alignItems: "center",
+    paddingHorizontal: 24,
   },
   wrap: {
     flexDirection: "row",
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontSize: 22,
-    marginHorizontal: 16,
+    marginLeft: 16,
     fontWeight: "bold",
     color: "#000000"
   }
