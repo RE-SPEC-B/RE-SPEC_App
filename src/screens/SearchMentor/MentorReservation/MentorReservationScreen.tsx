@@ -4,6 +4,8 @@ import AppointmentHeader from "@components/header/AppointmentHeader";
 import { styles } from "./styles";
 import ScheduleInput from "@components/scheduleInput/ScheduleInput";
 import SuccessIcon from "./SuccessIcon";
+import Button from "@components/button/Button";
+import Input from "@components/input/Input";
 
 const MentorReservationScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -42,9 +44,15 @@ const MentorReservationScreen = () => {
           </Text>
         </View>
         <View style={styles.timeSelectBox}>
-          <Text>버튼</Text>
-          <Text>버튼</Text>
-          <Text>버튼</Text>
+          <View style={{ width: 108 }}>
+            <Button type="primary" label="20분" disabled={false} />
+          </View>
+          <View style={{ width: 108 }}>
+            <Button type="primary" label="40분" disabled={true} />
+          </View>
+          <View style={{ width: 108 }}>
+            <Button type="primary" label="60분" disabled={true} />
+          </View>
         </View> */}
         {/* 날짜 선택 */}
         {/* <View style={styles.titleBox}>
@@ -88,14 +96,23 @@ const MentorReservationScreen = () => {
             PDF 형대로 제출을 원하시는 경우, 구글드라이브{"\n"}업로드하여 해당 링크를 전달해 주세요.
           </Text>
         </View>
-        <Text>링크 인풋 자리</Text> */}
+        <Input
+          type="default"
+          value=""
+          placeholder={"포트폴리오 링크를 입력해주세요."}
+        /> */}
         {/* 멘토 질문 */}
-        {/* <View style={styles.titleBox}>
+        <View style={styles.titleBox}>
           <Text style={styles.mainTitle}>
             멘토에게{"\n"}궁금한 것을 적어주세요👇
           </Text>
         </View>
-        <Text>멀티라인 텍스트인풋자리</Text> */}
+        <Input
+          type="default"
+          value=""
+          placeholder={"자유롭게 질문을 적어주세요."}
+          multiline={true}
+        />
       </View>
       <View style={styles.payBox}>
         <View style={styles.payTextBox}>
@@ -103,8 +120,12 @@ const MentorReservationScreen = () => {
           <Text style={styles.payTextMain}>40,000 원</Text>
         </View>
         <View style={styles.payButtonBox}>
-          <Text>장바구니버튼</Text>
-          <Text>결제하기버튼</Text>
+          <View style={{ width: 167 }}>
+            <Button type="tertiary" label="장바구니" disabled={false} />
+          </View>
+          <View style={{ width: 167 }}>
+            <Button type="primary" label="결제하기" disabled={false} />
+          </View>
         </View>
       </View>
     </SafeAreaView>

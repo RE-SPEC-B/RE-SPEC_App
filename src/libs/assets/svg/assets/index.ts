@@ -33,3 +33,4 @@ export {default as starOne} from './StarOne.svg';
 export {default as textgateEdit} from './TextgateEdit.svg';
 export {default as timelineOff} from './TimelineOff.svg';
 export {default as timelineOn} from './TimelineOn.svg';
+export {default as plus} from './Plus.svg';

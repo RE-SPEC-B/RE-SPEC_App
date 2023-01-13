@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
     height: 48,
   },
   titleBox: {
+    marginTop: 24,
     marginBottom: 32,
     lineHeight: 40,
   },
