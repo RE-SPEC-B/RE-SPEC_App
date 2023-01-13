@@ -24,9 +24,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 88,
     justifyContent: "space-between",
-    alignContent: "center",
-    marginHorizontal: 24,
-    marginVertical: 16,
+    alignItems: "center",
+    paddingHorizontal: 24,
   },
   svgStyle: {
     marginTop: 8
