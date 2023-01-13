@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
     searchBar: {
       flexDirection: "row",
       alignContent: "center",
-      height: 40,
+      height: 46,
       borderWidth: 1,
       borderRadius: 26.5,
       borderColor: EColor.MINT_500,
       backgroundColor: "#FFFFFF",
-      paddingHorizontal: 8,
+      paddingHorizontal: 16,
     },
     svgStyle: {
         marginTop: 8
