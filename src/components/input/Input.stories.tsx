@@ -12,5 +12,11 @@ storiesOf("Input", module)
     <Input type="email-address" value="" placeholder={"닉네임"} />
   ))
   .add("multiline", () => (
-    <Input type="default" value="" placeholder={"닉네임"} multiline={true} />
+    <Input
+      type="default"
+      value=""
+      placeholder={"닉네임"}
+      multiline={true}
+      maxLength={50}
+    />
   ));
