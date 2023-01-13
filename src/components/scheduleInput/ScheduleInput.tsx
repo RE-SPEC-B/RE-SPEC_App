@@ -1,6 +1,7 @@
 import { TouchableHighlight, Text, View } from "react-native";
 import React from "react";
 import { styles } from "./styles";
+import SvgIcon from "@components/svg/SvgIcon";
 
 interface IScheduleInput {
   success: boolean;
@@ -20,7 +21,7 @@ const ScheduleInput = ({ success, labelLeft, labelRight }: IScheduleInput) => {
         {success ? (
           <Text style={styles.successPlaceHolderRight}>{labelRight}</Text>
         ) : (
-          <Text>+버튼 들어갈자리</Text>
+          <SvgIcon name="plus" />
         )}
       </View>
     </TouchableHighlight>
