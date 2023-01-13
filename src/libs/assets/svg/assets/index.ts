@@ -14,6 +14,7 @@ export {default as homeOn} from './HomeOn.svg';
 export {default as like} from './Like.svg';
 export {default as link} from './Link.svg';
 export {default as markOff} from './MarkOff.svg';
+export {default as markOffWhite} from './MarkOffWhite.svg';
 export {default as markOn} from './MarkOn.svg';
 export {default as mypageOff} from './MypageOff.svg';
 export {default as mypageOn} from './MypageOn.svg';
