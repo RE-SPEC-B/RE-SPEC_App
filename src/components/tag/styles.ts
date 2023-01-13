@@ -36,6 +36,39 @@ const tagStyles = (size: Pick<ITagProps, "size">["size"]) => {
           color: EColor.GRAY_900,
         },
       });
+    case "smallB":
+      return StyleSheet.create({
+        tagWrapper: {
+          alignSelf: "flex-start",
+          flexDirection: "row",
+          alignItems: "center",
+          borderRadius: 8,
+          borderWidth: 1,
+          paddingVertical: 8,
+          paddingHorizontal: 16,
+        },
+        emoji: {
+          fontSize: 14,
+        },
+        labelWithEmoji: {
+          marginLeft: 6,
+        },
+        onSelectedTag: {
+          backgroundColor: EColor.GRAY_800,
+          borderColor: EColor.GRAY_800,
+        },
+        offSelectedTag: {
+          backgroundColor: EColor.GRAY_100,
+          borderColor: EColor.GRAY_300,
+        },
+        onSelectedLabel: {
+          color: EColor.GRAY_50,
+          fontWeight: "500",
+        },
+        offSelectedLabel: {
+          color: EColor.GRAY_500,
+        },
+      });
     case "big":
       return StyleSheet.create({
         tagWrapper: {
