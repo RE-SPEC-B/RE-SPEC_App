@@ -6,17 +6,19 @@ import {
   } from "react-native";
 import { EColor } from "@styles/color";
 
-const Profile = ({imageUri}: {imageUri:string|any|null}) => {
+interface IProfile {
+  imageUri?: string
+}
+
+const Profile = (props: IProfile) => {
+  const { imageUri = "https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792__480.png" } = props;
     return (
       <View style={styles.container} >
-        {imageUri !== '' && (
           <Image 
             style={styles.image}
             source={{uri: imageUri}}
             resizeMode="cover"
           />
-        )}
-        
       </View>
     );
 };
