@@ -7,7 +7,7 @@ import { SvgIconProps } from "@components/svg/SvgIcon";
 import tagStyles from "./styles";
 
 export interface ITagProps {
-  size?: "small" | "big";
+  size?: "small" | "smallB" | "big";
   onChange?: () => void;
   selected?: boolean;
   emoji?: string;
@@ -16,7 +16,9 @@ export interface ITagProps {
 }
 
 /**
- * 직무태그, 검색태그일 경우 size = "big"
+ * @param size 버튼타입
+ * 직무태그, 검색태그일 경우 "big"
+ * 멘토상태일 경우 "smallB"
  */
 const Tag = (props: ITagProps) => {
   const {
