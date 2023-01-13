@@ -1,4 +1,4 @@
-import { EFontColor } from "@styles/color";
+import { EColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
@@ -45,8 +45,8 @@ const Tab = <T,>(props: ITabProps<T>) => {
               Font.title2,
               styles().tabLabel,
               value === selected
-                ? { color: EFontColor.MAIN_BLACK }
-                : { color: EFontColor.DISABLED },
+                ? { color: EColor.GRAY_900 }
+                : { color: EColor.GRAY_400 },
             ]}
           >
             {label}
