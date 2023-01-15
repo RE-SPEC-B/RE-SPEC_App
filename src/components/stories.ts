@@ -8,3 +8,4 @@ import "./tab/Tab.stories";
 import "./toggle/Toggle.stories";
 import "./chip/Chip.stories";
 import "./element/Profile.stories";
+import "./chip/Chip.stories";
