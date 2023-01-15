@@ -8,6 +8,7 @@ export type BottomBarNavigator = {
   ["BottomSearchMentor"]: undefined;
   ["BottomMyPage"]: undefined;
   ["BottomCommunity"]: undefined;
+  ["BottomSchedule"]: undefined;
 };
 
 export type LoginStackParamList = {
@@ -33,4 +34,9 @@ export type MyPageStackParamList = {
 export type SearchMentorStackParamList = {
   MentorMain: undefined;
   MentorDetail: undefined;
+  MentorReservation: undefined;
+};
+
+export type ScheduleStackParamList = {
+  Home: undefined;
 };
