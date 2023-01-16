@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 208, // 버튼 생기면 100%로 사이즈 맞추기. 나머지도 확인
+    width: 218, // 버튼 생기면 100%로 사이즈 맞추기. 나머지도 확인
     height: 48,
   },
 });
