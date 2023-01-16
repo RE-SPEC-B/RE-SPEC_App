@@ -4,6 +4,7 @@ import { Fonts } from "@styles/font";
 
 export const styles = StyleSheet.create({
   view: {
+    position: "relative",
     width: "100%",
     height: "100%",
     backgroundColor: EColor.GRAY_50,
@@ -38,6 +39,7 @@ export const styles = StyleSheet.create({
     height: 48,
   },
   titleBox: {
+    marginTop: 24,
     marginBottom: 32,
     lineHeight: 40,
   },
@@ -78,6 +80,8 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   payBox: {
+    position: "absolute",
+    bottom: 0,
     width: "100%",
     height: 170,
     padding: 24,
