@@ -6,13 +6,20 @@ import ScheduleInput from "@components/scheduleInput/ScheduleInput";
 import SuccessIcon from "./SuccessIcon";
 import Button from "@components/button/Button";
 import Input from "@components/input/Input";
+import CustomModal from "@components/customModal/CustomModal";
 
 const MentorReservationScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={styles.view}>
       {/* 커스텀 모달 */}
-      <Modal
+      <CustomModal
+        visible={modalVisible}
+        label={`나가시겠습니까?${"\n"}입력하신 내용이 저장되지 않습니다.`}
+        buttonLeftLabel="취소"
+        buttonRightLabel="확인"
+      />
+      {/* <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
@@ -29,7 +36,7 @@ const MentorReservationScreen = () => {
             </View>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
       {/* 헤더 */}
       <AppointmentHeader />
       {/* 뷰 */}
@@ -102,7 +109,7 @@ const MentorReservationScreen = () => {
           placeholder={"포트폴리오 링크를 입력해주세요."}
         /> */}
         {/* 멘토 질문 */}
-        {/* <View style={styles.titleBox}>
+        <View style={styles.titleBox}>
           <Text style={styles.mainTitle}>
             멘토에게{"\n"}궁금한 것을 적어주세요👇
           </Text>
@@ -112,7 +119,7 @@ const MentorReservationScreen = () => {
           value=""
           placeholder={"자유롭게 질문을 적어주세요."}
           multiline={true}
-        /> */}
+        />
       </View>
       {/* 결제창 */}
       <View style={styles.payBox}>
