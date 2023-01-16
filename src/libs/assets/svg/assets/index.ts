@@ -4,6 +4,8 @@ export {default as communityOff} from './CommunityOff.svg';
 export {default as communityOn} from './CommunityOn.svg';
 export {default as deleteBlack} from './DeleteBlack.svg';
 export {default as deleteWhite} from './DeleteWhite.svg';
+export {default as download} from './Download.svg';
+export {default as downloadComplete} from './DownloadComplete.svg';
 export {default as dropdownBlack} from './DropdownBlack.svg';
 export {default as dropdownGrey} from './DropdownGrey.svg';
 export {default as filter} from './Filter.svg';
