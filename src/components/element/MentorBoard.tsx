@@ -8,7 +8,7 @@ import {
   Text,
 } from "react-native";
 import periodStarSVG from "@utils/periodStarSVG";
-import MentorDetailTag from "@components/tag/MentorDetailTag";
+import Tag from "../tag/Tag";
 import { styles } from "./MentorBoard.style";
 
 interface IMentorBoardProps {
@@ -33,8 +33,12 @@ const MentorBoard = (props: IMentorBoardProps) => {
     setBookmarkState(prev=> !prev);
   }
 
+  const onPressMentorBoard = () => {
+    console.log("Click Mentor: ", mentorName);
+  }
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPressMentorBoard} activeOpacity={1} style={styles.container}>
       <View style={styles.thumbnailWrap}>
         <Image resizeMode="cover" 
                 source={{uri: thumbnailImageURI}}
@@ -57,12 +61,12 @@ const MentorBoard = (props: IMentorBoardProps) => {
         {mentorTag.map((e, idx)=>{
           return (
             <View key={e} style={{marginRight: 8}}>
-              <MentorDetailTag isBlack={false} key={e} label={e}/>
+              <Tag size="smallB" label={e} key={e}/>
             </View>
           )
         })}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

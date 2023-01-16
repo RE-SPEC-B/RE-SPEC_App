@@ -17,10 +17,14 @@ const Search = () => {
     setSearchState((prev)=>!prev)
   }
 
+  const onBlurTextInput = () => {
+    setSearchState(false);
+  }
+
   return (
     <View>
         {searchState ? (
-            <TextInput style={{...styles.searchBar, width: widthSize}}/>
+            <TextInput onBlur={onBlurTextInput} style={{...styles.searchBar, width: widthSize}}/>
         ):(
         <TouchableOpacity
                 style={styles.svgStyle}
