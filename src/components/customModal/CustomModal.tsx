@@ -10,7 +10,7 @@ const CustomModal = ({ visible, label, buttonLeftLabel, buttonRightLabel }) => {
         <View style={styles.modal}>
           <Text style={styles.modalText}>{label}</Text>
           <View style={styles.modalButtonBox}>
-            <View style={{ display: "flex", width: 105, height: 48 }}>
+            <View style={{ width: 105, height: 48 }}>
               <PopupButton type={"submit"} label={buttonLeftLabel} />
             </View>
             <View style={{ width: 105, height: 48 }}>
