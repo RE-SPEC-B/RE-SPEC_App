@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MentorDetailScreen from "@screens/SearchMentor/MentorDetailScreen";
-import MentorMainScreen from "@screens/SearchMentor/MentorMainScreen";
+import MentorMainScreen from "@screens/SearchMentor/MentorMain/MentorMainScreen";
 import { SearchMentorStackParamList } from "@defines/navigations";
 import MentorReservationScreen from "@screens/SearchMentor/MentorReservation/MentorReservationScreen";
 
