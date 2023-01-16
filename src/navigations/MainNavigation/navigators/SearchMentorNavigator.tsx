@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator<SearchMentorStackParamList>();
 
 const SearchMentorNavigator = ({ navigation }) => {
   return (
-    <Stack.Navigator initialRouteName="MentorReservation">
+    <Stack.Navigator>
       <Stack.Screen
         name="MentorMain"
         component={MentorMainScreen}
