@@ -20,10 +20,6 @@ const data = {
 
 const MentorMainScreen = ({ navigations }) => {
   const fonts = Fonts();
-  const otherOneTouch = useCallback((event: TouchEvent) => {
-  	(document.activeElement as HTMLElement).blur() // 현재 활성화된 element의 blur 이벤트 호출
-    console.log("ddd")
-  }, []);
 
   return (
     <SafeAreaView>
