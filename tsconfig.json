@@ -40,7 +40,7 @@
         "./src/defines/*"
       ],
       "@utils/*": [
-        "./utils/*"
+        "./src/utils/*"
       ],
     },
   },
