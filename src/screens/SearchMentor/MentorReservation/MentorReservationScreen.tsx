@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, Modal } from "react-native";
+import { SafeAreaView, View, Text } from "react-native";
 import React, { useState } from "react";
 import AppointmentHeader from "@components/header/AppointmentHeader";
 import { styles } from "./styles";
@@ -16,27 +16,9 @@ const MentorReservationScreen = () => {
       <CustomModal
         visible={modalVisible}
         label={`나가시겠습니까?${"\n"}입력하신 내용이 저장되지 않습니다.`}
-        buttonLeftLabel="취소"
-        buttonRightLabel="확인"
+        buttonLeftLabel="네"
+        buttonRightLabel="아니오"
       />
-      {/* <Modal
-        animationType="fade"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.modalView}>
-          <View style={styles.modal}>
-            <Text style={styles.modalText}>나가시겠습니까{"\n"}입력하신 내용이 저장되지 않습니다.</Text>
-            <View style={styles.modalButtonBox}>
-              <Text>버튼</Text>
-              <Text>버튼</Text>
-            </View>
-          </View>
-        </View>
-      </Modal> */}
       {/* 헤더 */}
       <AppointmentHeader />
       {/* 뷰 */}
@@ -109,7 +91,7 @@ const MentorReservationScreen = () => {
           placeholder={"포트폴리오 링크를 입력해주세요."}
         /> */}
         {/* 멘토 질문 */}
-        <View style={styles.titleBox}>
+        {/* <View style={styles.titleBox}>
           <Text style={styles.mainTitle}>
             멘토에게{"\n"}궁금한 것을 적어주세요👇
           </Text>
@@ -119,10 +101,11 @@ const MentorReservationScreen = () => {
           value=""
           placeholder={"자유롭게 질문을 적어주세요."}
           multiline={true}
-        />
+          maxLength={40}
+        /> */}
       </View>
       {/* 결제창 */}
-      <View style={styles.payBox}>
+      {/* <View style={styles.payBox}>
         <View style={styles.payTextBox}>
           <Text style={styles.payTextSub}>결제금액</Text>
           <Text style={styles.payTextMain}>40,000 원</Text>
@@ -135,7 +118,7 @@ const MentorReservationScreen = () => {
             <Button type="primary" label="결제하기" disabled={false} />
           </View>
         </View>
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };
