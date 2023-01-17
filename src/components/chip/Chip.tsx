@@ -8,16 +8,21 @@ interface IChip {
   type?: ChipType;
   label: string;
   active?: boolean;
+  onClick?: () => void;
 }
 
-const Chip = ({ type, label, active = false }: IChip) => {
+const Chip = ({ type, label, active = false, onClick }: IChip) => {
   const CHIPS = {
     filter: styles.filterChip,
     option: styles.optionChip,
   };
   const activeStyles = active ? { ...styles.active } : { ...styles.inactive };
 
-  return <Text style={{ ...CHIPS[type], ...activeStyles }}>{label}</Text>;
+  return (
+    <Text onPress={onClick} style={{ ...CHIPS[type], ...activeStyles }}>
+      {label}
+    </Text>
+  );
 };
 
 export default Chip;
@@ -28,6 +33,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     borderWidth: 1,
     textAlign: "center",
+    width: "100%",
     ...Fonts().body1,
     maxWidth: 108,
     borderRadius: 8,
