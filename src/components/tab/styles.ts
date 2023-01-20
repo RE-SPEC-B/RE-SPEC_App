@@ -1,6 +1,7 @@
+import { EColor } from "@styles/color";
 import { StyleSheet } from "react-native";
 
-const tabStyles = {
+export const tabStyles = {
   twoTier: StyleSheet.create({
     tabWrapper: {
       height: 60,
@@ -58,4 +59,34 @@ const tabStyles = {
   }),
 };
 
-export default tabStyles;
+export const smallTabStyles = StyleSheet.create({
+  tagWrapper: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 100,
+    borderWidth: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+  },
+  emoji: {
+    fontSize: 14,
+  },
+  labelWithEmoji: {
+    marginLeft: 6,
+  },
+  onSelectedTag: {
+    backgroundColor: EColor.MINT_50,
+    borderColor: EColor.MINT_500,
+  },
+  offSelectedTag: {
+    backgroundColor: EColor.GRAY_50,
+    borderColor: EColor.GRAY_400,
+  },
+  onSelectedLabel: {
+    color: EColor.GRAY_900,
+  },
+  offSelectedLabel: {
+    color: EColor.GRAY_900,
+  },
+});
