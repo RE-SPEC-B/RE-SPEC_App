@@ -98,6 +98,10 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     backgroundColor: EColor.GRAY_400,
   },
+  filterCureerBottomView: {
+    paddingVertical: 24,
+    paddingHorizontal: 16,
+  },
 });
 
 export { styles };

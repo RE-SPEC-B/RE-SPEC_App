@@ -20,6 +20,7 @@ import {
   cureers,
 } from "@defines/mentorFilter";
 import { CureerType } from "src/defines/mentorFilter";
+import Button from "@components/button/Button";
 
 const MentorMainScreen = ({ navigations }) => {
   const fonts = Fonts();
@@ -64,41 +65,52 @@ const MentorMainScreen = ({ navigations }) => {
           </View>
         )}
         {filterParams.type === "cureer" && filterParams.visible === true && (
-          <View style={styles.filterCureerView}>
-            <View style={styles.filterCureerKeyView}>
-              {cureers.map((value) => {
-                const cureerId = value.id as CureerType;
-                const activeStyles =
-                  cureerId === cureerValue
-                    ? { ...styles.filterCureerFontActive }
-                    : {};
-                const onClick = () => {
-                  setCureerValue(cureerId);
-                  setCureerOptions(value.options);
-                };
-                return (
-                  <Text
-                    style={{ ...styles.filterCureerFont, ...activeStyles }}
-                    onPress={onClick}
-                  >
-                    {value.label}
-                  </Text>
-                );
-              })}
-            </View>
-            <View style={styles.filterCureerOptionView}>
-              {cureerOptions.map((value) => {
-                return (
-                  <View style={styles.filterCureerOptionBox}>
-                    <View style={styles.dot} />
-                    <Text style={styles.filterCureerOptionFont}>
+          <>
+            <View style={styles.filterCureerView}>
+              <View style={styles.filterCureerKeyView}>
+                {cureers.map((value) => {
+                  const cureerId = value.id as CureerType;
+                  const activeStyles =
+                    cureerId === cureerValue
+                      ? { ...styles.filterCureerFontActive }
+                      : {};
+                  const onClick = () => {
+                    setCureerValue(cureerId);
+                    setCureerOptions(value.options);
+                  };
+                  return (
+                    <Text
+                      style={{ ...styles.filterCureerFont, ...activeStyles }}
+                      onPress={onClick}
+                    >
                       {value.label}
                     </Text>
-                  </View>
-                );
-              })}
+                  );
+                })}
+              </View>
+              <View style={styles.filterCureerOptionView}>
+                {cureerOptions.map((value) => {
+                  return (
+                    <View style={styles.filterCureerOptionBox}>
+                      <View style={styles.dot} />
+                      <Text style={styles.filterCureerOptionFont}>
+                        {value.label}
+                      </Text>
+                    </View>
+                  );
+                })}
+              </View>
             </View>
-          </View>
+            <View style={styles.filterCureerBottomView}>
+              <View>
+                <Text>chips</Text>
+                <View>
+                  <Button label={"초기화"} type={"tertiary"} />
+                  <Button label={"검색"} type={"primary"} />
+                </View>
+              </View>
+            </View>
+          </>
         )}
         <TouchableOpacity
           style={styles.dutyPositionWrap}
