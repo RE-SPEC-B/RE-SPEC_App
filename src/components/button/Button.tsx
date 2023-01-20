@@ -7,11 +7,16 @@ type ButtonType = "primary" | "secondary" | "tertiary";
 interface IButton {
   type: ButtonType;
   label: string;
-  disabled: boolean;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
-const Button = ({ type = "primary", label, disabled, onClick }: IButton) => {
+const Button = ({
+  type = "primary",
+  label,
+  disabled = false,
+  onClick,
+}: IButton) => {
   const disabledButton = disabled ? styles.disabledButtonColor : {};
   const disabledLabel = disabled ? styles.disabledLabelColor : {};
 
