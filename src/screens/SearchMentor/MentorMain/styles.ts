@@ -1,5 +1,4 @@
 import { EColor } from "@styles/color";
-import { Fonts } from "@styles/font";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -50,74 +49,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-  },
-  filterSequenceView: {
-    marginHorizontal: 25,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  filterCureerView: {
-    marginHorizontal: 24,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  filterCureerKeyView: {
-    flexDirection: "column",
-    minWidth: 150,
-  },
-  filterCureerFont: {
-    ...Fonts().title4,
-    color: EColor.GRAY_400,
-    marginBottom: 32,
-  },
-  filterCureerFontActive: {
-    ...Fonts().title4,
-    color: EColor.GRAY_900,
-    marginBottom: 32,
-  },
-  filterCureerOptionView: {
-    minWidth: 192,
-    flexDirection: "column",
-    backgroundColor: EColor.GRAY_100,
-    padding: 24,
-    borderRadius: 8,
-  },
-  filterCureerOptionBox: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 32,
-  },
-  filterCureerOptionFont: {
-    ...Fonts().title6,
-    color: EColor.GRAY_500,
-    marginLeft: 8,
-  },
-  filterCureerOptionFontActive: {
-    ...Fonts().title4,
-    color: EColor.GRAY_900,
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 16,
-    backgroundColor: EColor.GRAY_400,
-  },
-  dotActive: {
-    backgroundColor: EColor.MINT_500,
-  },
-  filterCureerBottomView: {
-    paddingVertical: 24,
-    paddingHorizontal: 16,
-    marginTop: 32,
-    backgroundColor: EColor.GRAY_50,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    shadowRadius: 24,
-    shadowOpacity: 0.05,
-    shadowOffset: {
-      width: 0,
-      height: -10,
-    },
   },
 });
 
