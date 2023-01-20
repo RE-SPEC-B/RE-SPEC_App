@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   filterCureerKeyView: {
     flexDirection: "column",
+    minWidth: 150,
   },
   filterCureerFont: {
     ...Fonts().title4,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   filterCureerOptionView: {
-    flex: 1,
+    minWidth: 192,
     flexDirection: "column",
     backgroundColor: EColor.GRAY_100,
     padding: 24,
