@@ -4,7 +4,6 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-  useWindowDimensions,
 } from "react-native";
 import React, { useState } from "react";
 import Header from "@components/header/Header";
@@ -13,20 +12,13 @@ import SvgIcon from "@components/svg/SvgIcon";
 import Tag from "@components/tag/Tag";
 import { Fonts } from "@styles/font";
 import MentorBoard from "@components/element/MentorBoard";
-import Chip from "@components/chip/Chip";
-import {
-  FilterType,
-  SequenceType,
-  sequences,
-  cureers,
-  CureerType,
-} from "@defines/mentorFilter";
-import Button from "@components/button/Button";
-import { EColor } from "@styles/color";
+import { FilterType, SequenceType } from "@defines/mentorFilter";
+import SequenceView from "./filterComponents/SequenceView";
+import CureerView from "./filterComponents/CureerView";
+import SearchView from "./filterComponents/SearchView";
 
 const MentorMainScreen = ({ navigations }) => {
   const fonts = Fonts();
-  const { width, height } = useWindowDimensions();
 
   const [filterParams, setFilterParams] = useState<{
     type: FilterType;
@@ -39,10 +31,7 @@ const MentorMainScreen = ({ navigations }) => {
   const [sequenceValue, setSequenceValue] =
     useState<SequenceType>("popularity");
 
-  const [cureerValue, setCureerValue] = useState<CureerType>("graduateSchool");
-  const [cureerOptions, setCureerOptions] = useState(
-    cureers.filter((c) => c.id === cureerValue)[0].options,
-  );
+  // TODO: cureer option에 관한 키 값은 나중에 데이터 받으면 재 수정 필요 (from mentorFilter.ts)
   const [cureerOptionValues, setCureerOptionVlues] = useState([]);
 
   return (
@@ -50,130 +39,19 @@ const MentorMainScreen = ({ navigations }) => {
       <ScrollView style={styles.container}>
         <Header />
         {filterParams.type === "sequence" && filterParams.visible === true && (
-          <View style={styles.filterSequenceView}>
-            {sequences.map((value) => {
-              const sequenceId = value.id as SequenceType;
-
-              const onClick = () => {
-                setSequenceValue(sequenceId);
-              };
-              return (
-                <Chip
-                  type="filter"
-                  label={value.label}
-                  active={sequenceValue === sequenceId}
-                  onClick={onClick}
-                  key={sequenceId}
-                />
-              );
-            })}
-          </View>
+          <SequenceView
+            sequenceValue={sequenceValue}
+            setSequenceValue={setSequenceValue}
+          />
         )}
         {filterParams.type === "cureer" && filterParams.visible === true && (
-          <>
-            <View style={styles.filterCureerView}>
-              <View style={styles.filterCureerKeyView}>
-                {cureers.map((value) => {
-                  const cureerId = value.id as CureerType;
-                  const activeStyles =
-                    cureerId === cureerValue
-                      ? { ...styles.filterCureerFontActive }
-                      : {};
-                  const onClick = () => {
-                    setCureerValue(cureerId);
-                    setCureerOptions(value.options);
-                  };
-                  return (
-                    <Text
-                      style={{ ...styles.filterCureerFont, ...activeStyles }}
-                      onPress={onClick}
-                      key={cureerId}
-                    >
-                      {value.label}
-                    </Text>
-                  );
-                })}
-              </View>
-              <View style={styles.filterCureerOptionView}>
-                {cureerOptions.map((value) => {
-                  const active = cureerOptionValues.includes(value);
-                  const activeStyles = active
-                    ? {
-                        dot: styles.dotActive,
-                        font: styles.filterCureerOptionFontActive,
-                      }
-                    : { dot: {}, font: {} };
-                  return (
-                    <View
-                      style={styles.filterCureerOptionBox}
-                      key={value.id}
-                      onTouchEnd={() => {
-                        if (cureerOptionValues.length >= 3) return;
-                        if (active) return;
-                        setCureerOptionVlues([...cureerOptionValues, value]);
-                      }}
-                    >
-                      <View style={{ ...styles.dot, ...activeStyles.dot }} />
-                      <Text
-                        style={{
-                          ...styles.filterCureerOptionFont,
-                          ...activeStyles.font,
-                        }}
-                      >
-                        {value.label}
-                      </Text>
-                    </View>
-                  );
-                })}
-              </View>
-            </View>
-            <View style={styles.filterCureerBottomView}>
-              <View style={{ flexDirection: "row", marginBottom: 22 }}>
-                {cureerOptionValues.length < 1 ? (
-                  <View>
-                    <Text
-                      style={{
-                        ...Fonts().body5,
-                        color: EColor.GRAY_600,
-                      }}
-                    >
-                      최대 3개까지 선택가능합니다.
-                    </Text>
-                  </View>
-                ) : (
-                  cureerOptionValues.map((value) => {
-                    return (
-                      <View key={value.id} style={{ marginRight: 8 }}>
-                        <Tag label={value.label} size="big" />
-                      </View>
-                    );
-                  })
-                )}
-              </View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <View style={{ width: (width - 48) / 3 }}>
-                  <Button
-                    label={"초기화"}
-                    type={"tertiary"}
-                    onClick={() => setCureerOptionVlues([])}
-                  />
-                </View>
-                <View style={{ flex: 1, marginLeft: 8 }}>
-                  <Button label={"검색"} type={"primary"} />
-                </View>
-              </View>
-            </View>
-          </>
+          <CureerView
+            cureerOptionValues={cureerOptionValues}
+            setCureerOptionVlues={setCureerOptionVlues}
+          />
         )}
         {filterParams.type === "search" && filterParams.visible === true && (
-          <View>
-            <Text>gnd</Text>
-          </View>
+          <SearchView />
         )}
         <TouchableOpacity
           style={styles.dutyPositionWrap}
