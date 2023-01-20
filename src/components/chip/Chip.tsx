@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     textAlign: "center",
     ...Fonts().body2,
-    maxWidth: 167,
+    width: "100%",
     borderRadius: 8,
   },
   active: {
