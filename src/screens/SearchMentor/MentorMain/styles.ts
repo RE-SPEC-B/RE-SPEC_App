@@ -92,15 +92,32 @@ const styles = StyleSheet.create({
     color: EColor.GRAY_500,
     marginLeft: 8,
   },
+  filterCureerOptionFontActive: {
+    ...Fonts().title4,
+    color: EColor.GRAY_900,
+  },
   dot: {
     width: 8,
     height: 8,
     borderRadius: 16,
     backgroundColor: EColor.GRAY_400,
   },
+  dotActive: {
+    backgroundColor: EColor.MINT_500,
+  },
   filterCureerBottomView: {
     paddingVertical: 24,
     paddingHorizontal: 16,
+    marginTop: 32,
+    backgroundColor: EColor.GRAY_50,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    shadowRadius: 24,
+    shadowOpacity: 0.05,
+    shadowOffset: {
+      width: 0,
+      height: -10,
+    },
   },
 });
 

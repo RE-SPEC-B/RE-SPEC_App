@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  useWindowDimensions,
 } from "react-native";
 import React, { useState } from "react";
 import Header from "@components/header/Header";
@@ -18,12 +19,14 @@ import {
   SequenceType,
   sequences,
   cureers,
+  CureerType,
 } from "@defines/mentorFilter";
-import { CureerType } from "src/defines/mentorFilter";
 import Button from "@components/button/Button";
+import { EColor } from "@styles/color";
 
 const MentorMainScreen = ({ navigations }) => {
   const fonts = Fonts();
+  const { width, height } = useWindowDimensions();
 
   const [filterParams, setFilterParams] = useState<{
     type: FilterType;
@@ -40,7 +43,8 @@ const MentorMainScreen = ({ navigations }) => {
   const [cureerOptions, setCureerOptions] = useState(
     cureers.filter((c) => c.id === cureerValue)[0].options,
   );
-  console.log(cureerOptions);
+  const [cureerOptionValues, setCureerOptionVlues] = useState([]);
+
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
@@ -59,6 +63,7 @@ const MentorMainScreen = ({ navigations }) => {
                   label={value.label}
                   active={sequenceValue === sequenceId}
                   onClick={onClick}
+                  key={sequenceId}
                 />
               );
             })}
@@ -82,6 +87,7 @@ const MentorMainScreen = ({ navigations }) => {
                     <Text
                       style={{ ...styles.filterCureerFont, ...activeStyles }}
                       onPress={onClick}
+                      key={cureerId}
                     >
                       {value.label}
                     </Text>
@@ -90,10 +96,30 @@ const MentorMainScreen = ({ navigations }) => {
               </View>
               <View style={styles.filterCureerOptionView}>
                 {cureerOptions.map((value) => {
+                  const active = cureerOptionValues.includes(value);
+                  const activeStyles = active
+                    ? {
+                        dot: styles.dotActive,
+                        font: styles.filterCureerOptionFontActive,
+                      }
+                    : { dot: {}, font: {} };
                   return (
-                    <View style={styles.filterCureerOptionBox}>
-                      <View style={styles.dot} />
-                      <Text style={styles.filterCureerOptionFont}>
+                    <View
+                      style={styles.filterCureerOptionBox}
+                      key={value.id}
+                      onTouchEnd={() => {
+                        if (cureerOptionValues.length >= 3) return;
+                        if (active) return;
+                        setCureerOptionVlues([...cureerOptionValues, value]);
+                      }}
+                    >
+                      <View style={{ ...styles.dot, ...activeStyles.dot }} />
+                      <Text
+                        style={{
+                          ...styles.filterCureerOptionFont,
+                          ...activeStyles.font,
+                        }}
+                      >
                         {value.label}
                       </Text>
                     </View>
@@ -102,15 +128,52 @@ const MentorMainScreen = ({ navigations }) => {
               </View>
             </View>
             <View style={styles.filterCureerBottomView}>
-              <View>
-                <Text>chips</Text>
-                <View>
-                  <Button label={"초기화"} type={"tertiary"} />
+              <View style={{ flexDirection: "row", marginBottom: 22 }}>
+                {cureerOptionValues.length < 1 ? (
+                  <View>
+                    <Text
+                      style={{
+                        ...Fonts().body5,
+                        color: EColor.GRAY_600,
+                      }}
+                    >
+                      최대 3개까지 선택가능합니다.
+                    </Text>
+                  </View>
+                ) : (
+                  cureerOptionValues.map((value) => {
+                    return (
+                      <View key={value.id} style={{ marginRight: 8 }}>
+                        <Tag label={value.label} size="big" />
+                      </View>
+                    );
+                  })
+                )}
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View style={{ width: (width - 48) / 3 }}>
+                  <Button
+                    label={"초기화"}
+                    type={"tertiary"}
+                    onClick={() => setCureerOptionVlues([])}
+                  />
+                </View>
+                <View style={{ flex: 1, marginLeft: 8 }}>
                   <Button label={"검색"} type={"primary"} />
                 </View>
               </View>
             </View>
           </>
+        )}
+        {filterParams.type === "search" && filterParams.visible === true && (
+          <View>
+            <Text>gnd</Text>
+          </View>
         )}
         <TouchableOpacity
           style={styles.dutyPositionWrap}
@@ -131,7 +194,16 @@ const MentorMainScreen = ({ navigations }) => {
         </TouchableOpacity>
         <View style={styles.filterWrap}>
           <View style={{ marginRight: 8 }}>
-            <Tag svg="filter" />
+            <Tag
+              svg="filter"
+              onChange={() =>
+                setFilterParams({
+                  type: "search",
+                  visible:
+                    filterParams.type === "search" && !filterParams.visible,
+                })
+              }
+            />
           </View>
           <Tag emoji="🙌" label="동문보기" />
         </View>
