@@ -1,21 +1,6 @@
-import { View, StyleSheet } from "react-native";
-import React from "react";
+import { StyleSheet } from "react-native";
 
-interface ISuccessIcon {
-  success: boolean;
-}
-
-const SuccessIcon = ({ success }: ISuccessIcon) => {
-  return success ? (
-    <View style={styles.successOnBorder}>
-      <View style={styles.successOnInner} />
-    </View>
-  ) : (
-    <View style={styles.successOffBorder} />
-  );
-};
-
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   successOnBorder: {
     justifyContent: "center",
     alignItems: "center",
@@ -39,5 +24,3 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
 });
-
-export default SuccessIcon;
