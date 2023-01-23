@@ -2,7 +2,7 @@ import { EColor } from "@styles/color";
 import { Fonts } from "@styles/font";
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
-import tabStyles from "./styles";
+import { tabStyles } from "./styles";
 import useTab from "./useTab";
 
 export interface ITabOptions<T> {
