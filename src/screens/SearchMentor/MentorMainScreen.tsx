@@ -6,6 +6,7 @@ const MentorMainScreen = ({ navigations }) => {
   return (
     <SafeAreaView>
       <Text>MentorMain</Text>
+      {/* <MentorDetailMain /> */}
       <MentorDetailMain />
     </SafeAreaView>
   );
