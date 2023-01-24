@@ -53,10 +53,6 @@ export const styles = StyleSheet.create({
     color: EColor.GRAY_500,
     ...Fonts().body3,
   },
-  timeSelectBox: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
   scheduleBox: {
     flexDirection: "row",
     justifyContent: "space-between",
