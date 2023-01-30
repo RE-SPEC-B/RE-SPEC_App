@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/react-native";
 import Filter from "./Filter";
+import SmallTab from "./SmallTab";
 import Tab from "./Tab";
 
 export const twoTier = [
@@ -83,4 +84,7 @@ storiesOf("Tab", module)
   .add("twoTier", () => <Tab options={twoTier} />)
   .add("threeTier", () => <Tab options={threeTier} />)
   .add("fourTier", () => <Tab options={fourTier} />)
-  .add("filter", () => <Filter options={fourTierFilter} />);
+  .add("filter", () => <Filter options={fourTierFilter} />)
+  .add("smallTab", () => <SmallTab label="인기" />)
+  .add("smallTabWithEmoji", () => <SmallTab label="동문보기" emoji="🙌" />)
+  .add("smallTabWithSvg", () => <SmallTab svg={"filter"} />);
