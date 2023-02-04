@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     height: 368,
   },
   customHeader: {
-    // color: EFontColor.MAIN_BLACK,
+    color: EColor.GRAY_900,
     ...Fonts().body4,
     fontSize: 22,
   },
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     marginBottom: 14,
     width: 32,
     textAlign: "center",
-    // color: EFontColor.SUB_GRAY,
+    color: EColor.GRAY_500,
     ...Fonts().body4,
     fontSize: 16,
   },
@@ -42,17 +42,17 @@ export const styles = StyleSheet.create({
   },
   text: {
     marginTop: Platform.OS === "android" ? 0 : 4,
-    // color: EFontColor.MAIN_BLACK,
+    color: EColor.GRAY_900,
     ...Fonts().body4,
     fontSize: 16,
   },
   disabledText: {
-    // color: EFontColor.SUB_GRAY,
+    color: EColor.GRAY_500,
     ...Fonts().body4,
     fontSize: 16,
   },
   defaultText: {
-    // color: EFontColor.MAIN_BLACK,
+    color: EColor.GRAY_900,
     ...Fonts().body4,
     fontSize: 16,
   },
@@ -61,11 +61,11 @@ export const styles = StyleSheet.create({
   },
   infoText: {
     marginTop: Platform.OS === "android" ? 18 : 0,
-    // color: EFontColor.SUB_GRAY,
+    color: EColor.GRAY_500,
     ...Fonts().body4,
   },
   selected: {
-    // backgroundColor: EBrandColor.MAIN_TEXT,
+    backgroundColor: EColor.MINT_500,
     borderRadius: 8,
   },
   calendarContainer: {

@@ -40,3 +40,7 @@ export type SearchMentorStackParamList = {
 export type ScheduleStackParamList = {
   Home: undefined;
 };
+
+export type TimeSelectParamList = {
+  TimeSelect: undefined;
+};

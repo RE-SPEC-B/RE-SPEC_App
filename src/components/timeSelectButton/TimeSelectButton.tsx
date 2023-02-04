@@ -1,18 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
+import { Text, StyleSheet, TouchableHighlight } from "react-native";
 import { Fonts } from "@styles/font";
-import { EBgColor } from "@styles/color";
+import { EColor } from "@styles/color";
 
 interface ISelcetButton {
   label: string;
   selected: boolean;
+  onClick?: () => void;
 }
 
-const TimeSelectButton = ({ label, selected }: ISelcetButton) => {
+const TimeSelectButton = ({ label, selected, onClick }: ISelcetButton) => {
   const disabledButton = selected ? styles.selectedButton : {};
   const disabledLabel = selected ? styles.selectedText : {};
   return (
-    <TouchableHighlight style={{ ...styles.button, ...disabledButton }}>
+    <TouchableHighlight
+      style={{ ...styles.button, ...disabledButton }}
+      onPress={onClick}
+    >
       <Text style={{ ...styles.text, ...disabledLabel }}>{label}</Text>
     </TouchableHighlight>
   );
@@ -28,12 +32,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   selectedButton: {
-    backgroundColor: EBgColor.BG_BLACK,
+    backgroundColor: EColor.GRAY_800,
   },
   text: {
     ...Fonts().body3,
     fontWeight: "bold",
-    color: EBgColor.BG_BLACK,
+    color: EColor.GRAY_800,
   },
   selectedText: {
     color: "white",

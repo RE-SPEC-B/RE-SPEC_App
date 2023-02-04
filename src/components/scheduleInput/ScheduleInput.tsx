@@ -7,13 +7,14 @@ interface IScheduleInput {
   success: boolean;
   labelLeft: String;
   labelRight: String | undefined;
+  onClick?: () => void;
 }
 
-const ScheduleInput = ({ success, labelLeft, labelRight }: IScheduleInput) => {
+const ScheduleInput = ({ success, labelLeft, labelRight, onClick }: IScheduleInput) => {
   const successButton = success ? styles.success : {};
   const successText = success ? styles.successPlaceHolderLeft : {};
   return (
-    <TouchableHighlight>
+    <TouchableHighlight onPress={onClick} underlayColor={"#999FA4"}>
       <View style={{ ...styles.default, ...successButton }}>
         <Text style={{ ...styles.defaultPlaceHolder, ...successText }}>
           {labelLeft}
