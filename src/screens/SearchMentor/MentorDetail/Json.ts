@@ -13,7 +13,7 @@ export const data = {
   profileCompany: "네이버",
   profileJob: "서비스기획",
   profileJobSubstring: "네이버 현직자가 알려주는 비전공자 취업이야기",
-  profilePoint: [
+  profileStrengths: [
     "대기업 이직 포트폴리오 피드백",
     "커리어 방향성에 대한 상세한 조언",
   ],
@@ -69,4 +69,99 @@ export const data = {
       },
     ],
   },
+};
+
+export const data1 = {
+  message: "Get mentor info success.",
+  data: [
+    {
+      id: 3,
+      username: "RESPEC003",
+      profile:
+        "https://sonb-test-bucket.s3.ap-northeast-2.amazonaws.com/1691669898025364.png",
+      Career: {
+        company: "네이버",
+        enum: "career_level_2",
+      },
+      Characteristics: [
+        {
+          enum: "characteristic_num_3",
+        },
+        {
+          enum: "characteristic_num_6",
+        },
+      ],
+      Jobs: [
+        {
+          enum: "job_num_3",
+        },
+      ],
+      Mentorinfo: {
+        introduction:
+          "눈에 띄는 스펙없이도 눈에 띄는 코칭이 가능해요! 전 주변 지인들의...",
+        mentoring: 4,
+        correcting: 8,
+        satisfaction: 3.2,
+        video:
+          "https://sonb-test-bucket.s3.ap-northeast-2.amazonaws.com/9191674380674747.mp4",
+        title: "네이버 현직자가 알려주는 비전공자 취업이야기",
+        Portfolio: {
+          url: "https://~",
+          announcement:
+            "신입이나 커리어 전환하시려는 분들은 현재 나의 결과물과 기업을 매칭해서...",
+          Portfoliopreviews: [
+            {
+              preview: "사진주소1",
+            },
+            {
+              preview: "사진주소2",
+            },
+            {
+              preview: "사진주소3",
+            },
+          ],
+          Portfoliorecommendations: [
+            {
+              recommendation: "추천1",
+            },
+          ],
+          Portfolioprogresses: [
+            {
+              progress: "과정1",
+            },
+            {
+              progress: "과정2",
+            },
+          ],
+        },
+        Mentorcareers: [
+          {
+            companyname: "LG",
+            company: "LG 서비스",
+            job: "상품기획",
+            start: "2013-04-00",
+            end: "2014-05-00",
+          },
+          {
+            companyname: "NAVER",
+            company: "네이버 서비스",
+            job: "사업기획",
+            start: "2015-04-00",
+            end: "2016-05-00",
+          },
+        ],
+        Mentorstrengths: [
+          {
+            strength: "대기업 이직 포트폴리오 피드백",
+          },
+          {
+            strength: "커리어 방향성에 대한 상세한 조언",
+          },
+        ],
+      },
+    },
+    {
+      reviews: 8,
+    },
+  ],
 };
