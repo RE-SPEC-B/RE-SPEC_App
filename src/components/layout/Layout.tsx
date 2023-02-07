@@ -7,7 +7,7 @@ interface ILayout {
   children: ReactNode;
 }
 
-export const LayoutMain = (props: ILayout) => {
+export const Layout = (props: ILayout) => {
   const { children } = props;
   const styles = StyleSheet.create({
     layout: {
@@ -18,7 +18,7 @@ export const LayoutMain = (props: ILayout) => {
   return <SafeAreaView style={styles.layout}>{section}</SafeAreaView>;
 };
 
-export const LayoutScroll = (props: ILayout) => {
+export const ScrollLayout = (props: ILayout) => {
   const { children } = props;
   const styles = StyleSheet.create({
     layout: {
