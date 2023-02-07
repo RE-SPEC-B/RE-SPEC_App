@@ -1,8 +1,10 @@
-import { LayoutMain } from "./Layout";
+import { LayoutMain, LayoutScroll } from "./Layout";
 import Section from "./Section";
 
-const Layout = Object.assign(LayoutMain, {
+export const Layout = Object.assign(LayoutMain, {
   Section: Section,
 });
 
-export default Layout;
+export const ScrollLayout = Object.assign(LayoutScroll, {
+  Section: Section,
+});
