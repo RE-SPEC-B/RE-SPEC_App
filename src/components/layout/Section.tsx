@@ -17,7 +17,7 @@ const Section = (props: ISection) => {
   });
   return (
     <View
-      style={[styles.section, !noMarginHorizontal && { marginHorizontal: -24 }]}
+      style={[styles.section, noMarginHorizontal && { marginHorizontal: -24 }]}
     >
       {children}
     </View>
