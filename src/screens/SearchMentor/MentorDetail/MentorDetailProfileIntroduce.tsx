@@ -17,15 +17,11 @@ export default function MentorDetailProfileIntroduce(
       <View>
         <View style={styles.introduceUpper}>
           <Text style={[Fonts().title1, styles.introduceText]}>저는 </Text>
-          <Text
-            style={[
-              Fonts().title1,
-              styles.introduceTextEmphasis,
-              styles.introduceTextEmphasisUnderline,
-            ]}
-          >
-            {profileCompany}
-          </Text>
+          <View style={styles.introduceTextEmphasisUnderline}>
+            <Text style={[Fonts().title1, styles.introduceTextEmphasis]}>
+              {profileCompany}
+            </Text>
+          </View>
           <Text style={[Fonts().title1, styles.introduceText]}>, </Text>
           <Text style={[Fonts().title1, styles.introduceTextEmphasis]}>
             {profileJob}
@@ -43,7 +39,6 @@ export default function MentorDetailProfileIntroduce(
 
 const styles = StyleSheet.create({
   introduce: {
-    marginTop: 40,
     paddingTop: 40,
     paddingBottom: 48,
     paddingLeft: 24,
@@ -60,8 +55,8 @@ const styles = StyleSheet.create({
     color: "#33E5EF",
   },
   introduceTextEmphasisUnderline: {
-    textDecorationLine: "underline",
-    textDecorationColor: EColor.GRAY_600,
+    borderBottomWidth: 1,
+    borderBottomColor: EColor.GRAY_600,
   },
   introduceSubDescription: {
     marginTop: 68,

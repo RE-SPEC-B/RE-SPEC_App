@@ -9,11 +9,11 @@ const Stack = createNativeStackNavigator<SearchMentorStackParamList>();
 const SearchMentorNavigator = ({ navigation }) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="MentorMain"
         component={MentorMainScreen}
         options={{ headerShown: false }}
-      />
+      /> */}
       <Stack.Screen
         name="MentorDetail"
         component={MentorDetailScreen}

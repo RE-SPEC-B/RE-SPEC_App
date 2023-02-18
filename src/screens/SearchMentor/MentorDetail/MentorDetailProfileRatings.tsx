@@ -32,9 +32,7 @@ export default function MentorDetailProfileRatings(
 
 const styles = StyleSheet.create({
   ratings: {
-    marginTop: 32,
     flexDirection: "row",
-    marginLeft: 24,
   },
   rating: {
     width: 114,

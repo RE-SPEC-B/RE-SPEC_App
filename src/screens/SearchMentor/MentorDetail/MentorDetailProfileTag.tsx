@@ -22,7 +22,7 @@ export default function MentorDetailProfileTag(
       <View style={styles.personalityTag}>
         {personalityTag.map((tag) => (
           <View style={styles.tag}>
-            <Tag size={"smallB"} label={tag} />
+            <Tag size={"smallG"} label={tag} />
           </View>
         ))}
       </View>
@@ -32,7 +32,6 @@ export default function MentorDetailProfileTag(
 
 const styles = StyleSheet.create({
   careerTag: {
-    marginTop: 24,
     marginLeft: -8,
     flexDirection: "row",
     justifyContent: "center",

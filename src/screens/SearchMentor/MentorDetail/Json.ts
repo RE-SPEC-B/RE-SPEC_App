@@ -14,8 +14,8 @@ export const data = {
   profileJob: "서비스기획",
   profileJobSubstring: "네이버 현직자가 알려주는 비전공자 취업이야기",
   profileStrengths: [
-    "대기업 이직 포트폴리오 피드백",
-    "커리어 방향성에 대한 상세한 조언",
+    "대기업 이직 \n 포트폴리오 피드백",
+    "커리어 방향성에 대한 \n 상세한 조언",
   ],
   introduction: {
     mentorTitle: "눈에 띄는 스펙 없이도 눈에 띄는 코칭이 가능해요!",
