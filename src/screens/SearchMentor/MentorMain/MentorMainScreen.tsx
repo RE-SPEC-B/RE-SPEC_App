@@ -3,9 +3,9 @@ import React, { useCallback } from "react";
 import Header from "@components/header/Header";
 import { styles } from "./MentorMainScreen.style";
 import SvgIcon from "@components/svg/SvgIcon";
-import Tag from "@components/tag/Tag";
 import { Fonts } from "@styles/font";
 import MentorBoard from "@components/element/MentorBoard";
+import SmallTab from "@components/tab/SmallTab";
 
 const data = [{
   thumbnailImageURI: 'https://cdn.pixabay.com/photo/2016/11/23/13/40/iphone-1852901__480.jpg',
@@ -64,9 +64,9 @@ const MentorMainScreen = ({ navigations }) => {
         </TouchableOpacity>
         <View style={styles.filterWrap}>
           <View style={{marginRight: 8}}>
-            <Tag svg="filter" />
+            <SmallTab svg="filter" />
           </View>
-          <Tag emoji="🙌" label="동문보기" />
+          <SmallTab emoji="🙌" label="동문보기" />
         </View>
         <View style={styles.infoWrap}>
           <Text style={fonts.body1}>전체({data.length.toLocaleString()})</Text>
